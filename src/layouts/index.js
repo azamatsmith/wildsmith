@@ -13,6 +13,7 @@ const TemplateWrapper = ({ children }) => (
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
+        { name: 'google-site-verification', content: '3rWKg8amLd3Yr6eHKJwlWBvHPgOOPJdz7YjhCyBl6s8' },
       ]}
     />
     <Header />
