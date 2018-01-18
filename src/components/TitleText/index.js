@@ -15,11 +15,11 @@ export default class TitleText extends Component {
   }
 
   render() {
-    const { children el, size } = this.props;
+    const { children, el, size } = this.props;
     return (
-      <${el} style={{ fontSize: size }} className="TitleText">
+      <span style={{ fontSize: size }} className="TitleText">
         {children}
-      </${el}>
+      </span>
     );
   }
 }

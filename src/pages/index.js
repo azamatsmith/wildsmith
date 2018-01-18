@@ -1,5 +1,6 @@
 import React from 'react'
 import { TitleText } from 'components';
+import './index.css';
 // import Link from 'gatsby-link'
 
 const IndexPage = () => (
