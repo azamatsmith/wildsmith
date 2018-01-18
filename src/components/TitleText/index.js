@@ -6,18 +6,20 @@ import './TitleText.css'
 export default class TitleText extends Component {
   static propTypes = {
     el: PropTypes.element,
-    size: PropTypes.number,
+    fontSize: PropTypes.number,
+    fontWeight: PropTypes.string,
   }
 
   static defaultProps = {
     element: 'span',
-    size: 71,
+    fontSize: 71,
+    fontWeight: 'normal',
   }
 
   render() {
-    const { children, el, size } = this.props;
+    const { children, el, fontWeight, fontSize } = this.props;
     return (
-      <span style={{ fontSize: size }} className="TitleText">
+      <span style={{ fontSize, fontWeight }} className="TitleText">
         {children}
       </span>
     );

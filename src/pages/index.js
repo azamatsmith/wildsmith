@@ -5,7 +5,7 @@ import './index.css';
 
 const IndexPage = () => (
   <div className="Index">
-    <TitleText>Wildsmith</TitleText>
+    <TitleText fontWeight="bold">we are wildsmith.</TitleText>
   </div>
 )
 
