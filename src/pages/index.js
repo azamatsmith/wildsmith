@@ -1,12 +1,4 @@
-import React from 'react'
-import { TitleText } from 'components';
-import './index.css';
-// import Link from 'gatsby-link'
+import React from 'react';
+import { Home } from 'routes';
 
-const IndexPage = () => (
-  <div className="Index">
-    <TitleText fontWeight="bold">we are wildsmith.</TitleText>
-  </div>
-)
-
-export default IndexPage
+export default <Home />;
