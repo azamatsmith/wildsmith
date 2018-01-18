@@ -9,7 +9,7 @@ export default class Home extends Component {
   static defaultProps = {};
 
   state = {
-    highlightActive: false,
+    highlightActive: false
   };
 
   mounted = true;
@@ -28,11 +28,13 @@ export default class Home extends Component {
 
   render() {
     const { highlightActive } = this.state;
-    const highlightClass = `Home-underline ${highlightActive ? 'active' : ''}`;
+    const highlightClass = `Home-underline ${highlightActive ? 'active' : '' }`;
     return (
       <div className="Home">
         <div className="Home-text-wrapper">
-          <TitleText fontWeight="bold">we are wildsmith.</TitleText>
+          <TitleText fontWeight="bold">
+            we are wildsmith.
+          </TitleText>
           <div className={highlightClass} />
         </div>
       </div>
