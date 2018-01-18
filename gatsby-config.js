@@ -6,4 +6,5 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
   ],
+  pathPrefix: '/wildsmith',
 };

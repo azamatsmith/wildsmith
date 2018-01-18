@@ -19,9 +19,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma --single-quote --write \"src/**/*.js\"",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "jest": "^22.1.2",
     "prettier": "^1.10.2"
   }
