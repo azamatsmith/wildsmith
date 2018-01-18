@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import './index.css';
 
 const TemplateWrapper = ({ children }) => (
+  console.log('children', children) ||
   <div>
     <Helmet
       title="wildsmith studio"
@@ -19,8 +20,8 @@ const TemplateWrapper = ({ children }) => (
   </div>
 );
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-};
+// TemplateWrapper.propTypes = {
+//   children: PropTypes.func,
+// };
 
 export default TemplateWrapper;

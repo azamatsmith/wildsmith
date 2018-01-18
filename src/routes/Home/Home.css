@@ -4,3 +4,22 @@
   height: 100vh;
   justify-content: center; 
 }
+
+.Home-text-wrapper {
+  position: relative;  
+}
+
+.Home-underline {
+  background-color: #DAA170;
+  height: 18px;
+  position: absolute;
+  left: 240px;
+  top: 22px; 
+  width: 0px;
+  transition: width 250ms ease-out;
+  z-index: -10;
+}
+
+.Home-underline.active {
+  width: 145px;  
+}
