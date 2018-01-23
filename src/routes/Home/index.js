@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TitleText } from 'components';
+import { Instafeed, TitleText } from 'components';
 import PropTypes from 'prop-types';
 import './Home.css';
 
@@ -37,6 +37,7 @@ export default class Home extends Component {
           </TitleText>
           <div className={highlightClass} />
         </div>
+        <Instafeed />
       </div>
     );
   }

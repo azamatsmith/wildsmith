@@ -4,10 +4,14 @@
   "version": "1.0.0",
   "author": "Matthew Smith",
   "dependencies": {
+    "apollo-client-preset": "^1.0.6",
     "gatsby": "^1.9.158",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-resolve-src": "^1.0.0",
+    "graphql": "^0.12.3",
+    "graphql-tag": "^2.6.1",
+    "react-apollo": "^2.0.4",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
