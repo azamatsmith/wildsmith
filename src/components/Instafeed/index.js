@@ -25,13 +25,29 @@ class Instafeed extends Component {
     })
   }
 
-  static defaultProps = {}
+  static defaultProps = {
+    data: {
+      photoList: []
+    }
+  }
+
+  // PRIVATE
+
+  _renderImages = () => {
+    const { photoList } = this.props.data;
+    if (!photoList) {
+      return null;
+    }
+    return this.props.data.photoList.map(image => (
+      <p key={image.id}>{image.caption.text}</p>
+    ))
+  }
 
   render() {
     console.log('mounted instafeed', this.props);
     return (
       <div>
-
+        {this._renderImages()}
       </div>
     );
   }
