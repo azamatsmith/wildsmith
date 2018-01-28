@@ -13,35 +13,37 @@ export default class Navbar extends Component {
 
   // PRIVATE
 
-  _isActive = (name) => (
-    this.props.currentRoute === name
-  )
+  _getClass = (name) => {
+    const baseClass = "link dim black b f6 f5-ns dib mr3";
+    return this.props.currentRoute === name
+      ?  `${baseClass} blue`
+      : baseClass;
+  }
 
 
   render() {
-    const baseClass = "link dim black b f6 f5-ns dib mr3";
     return (
       <nav className="Navbar">
         <GatsbyLink
-          className={`${baseClass} ${this._isActive('/') ? 'blue' : null }` }
+          className={this._getClass('/')}
           to="/"
         >
           home
         </GatsbyLink>
         <GatsbyLink
-          className={`${baseClass} ${this._isActive('/select-work') ? 'blue' : null }` }
+          className={this._getClass('/select-work')}
           to="/select-work"
         >
           select work
         </GatsbyLink>
         <GatsbyLink
-          className={`${baseClass} ${this._isActive('/who-we-are') ? 'blue' : null }` }
+          className={this._getClass('/who-we-are')}
           to="/who-we-are"
         >
           who we are
         </GatsbyLink>
         <GatsbyLink
-          className={`${baseClass} ${this._isActive('/contact') ? 'blue' : null }` }
+          className={this._getClass('/contact')}
           to="/contact"
         >
           contact
