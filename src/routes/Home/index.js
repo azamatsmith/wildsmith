@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Instafeed, TitleText } from 'components';
 import PropTypes from 'prop-types';
-import './Home.css';
+import './Home.scss';
 
 export default class Home extends Component {
   static propTypes = {};
@@ -9,7 +9,7 @@ export default class Home extends Component {
   static defaultProps = {};
 
   state = {
-    highlightActive: false
+    highlightActive: false,
   };
 
   mounted = true;
@@ -28,13 +28,11 @@ export default class Home extends Component {
 
   render() {
     const { highlightActive } = this.state;
-    const highlightClass = `Home-underline ${highlightActive ? 'active' : '' }`;
+    const highlightClass = `Home-underline bg-orange absolute w-0 ${highlightActive ? 'active' : ''}`;
     return (
-      <div className="Home">
-        <div className="Home-text-wrapper">
-          <TitleText fontWeight="bold">
-            we are wildsmith.
-          </TitleText>
+      <div className="Home flex flex-column justify-center items-center">
+        <div className="Home-text-wrapper relative mt3">
+          <TitleText fontWeight="bold">we are wildsmith.</TitleText>
           <div className={highlightClass} />
         </div>
         <Instafeed />

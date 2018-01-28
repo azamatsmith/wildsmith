@@ -1,0 +1,17 @@
+@import 'variables'; // Must appear before tachyons.scss
+@import '~tachyons-sass/tachyons.scss';
+
+// fonts
+.butler {
+  font-family: Butler;
+}
+
+// Backgrounds
+.bg-orange {
+  background-color: $orange;
+}
+
+// Sizes
+.f-70 {
+  font-size: 71px;
+}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './TitleText.css';
 
 export default class TitleText extends Component {
   static propTypes = {
@@ -18,9 +17,9 @@ export default class TitleText extends Component {
   render() {
     const { children, el, fontWeight, fontSize } = this.props;
     return (
-      <span style={{ fontSize, fontWeight }} className="TitleText">
+      <h1 style={{ fontSize, fontWeight }} className="TitleText near-black butler f-70">
         {children}
-      </span>
+      </h1>
     );
   }
 }

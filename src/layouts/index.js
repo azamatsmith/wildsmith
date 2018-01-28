@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import client from 'utils/apollo';
 
 import Header from '../components/Header';
-import './index.css';
+import '../styles/main.scss';
 
 const TemplateWrapper = ({ children }) => (
   <ApolloProvider client={client}>

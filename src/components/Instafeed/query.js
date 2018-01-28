@@ -15,11 +15,11 @@ export default gql`
           width
           url
         }
-        // standard_resolution {
-        //   height
-        //   width
-        //   url
-        // }
+        standard_resolution {
+          height
+          width
+          url
+        }
       }
       caption {
         text
