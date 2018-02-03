@@ -1,0 +1,25 @@
+// $numberLinks: 4;
+// $percent: percentage($numberLinks / 100);
+
+
+.link-0.active ~ hr { 
+  margin-left: 1%; 
+}
+.link-1.active ~ hr { 
+  margin-left: 26%; 
+}
+
+.link-2.active ~ hr { 
+  // margin-left: percent(2 * $percent); 
+  margin-left: 51%; 
+}
+
+.link-3.active ~ hr { 
+  // margin-left: percent(3 * $percent); 
+  margin-left: 76%; 
+}
+
+.Navbar-hr {
+  margin-top: -5px;
+  max-width: 10%;
+}
