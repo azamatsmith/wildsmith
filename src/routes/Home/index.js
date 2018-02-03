@@ -28,7 +28,7 @@ export default class Home extends Component {
 
   render() {
     const { highlightActive } = this.state;
-    const highlightClass = `Home-underline bg-orange absolute w-0 ${highlightActive ? 'active' : ''}`;
+    const highlightClass = `Home-underline bg-orange absolute ${highlightActive ? 'active' : ''}`;
     return (
       <div className="Home flex flex-column justify-center items-center">
         <div className="Home-text-wrapper relative mt3">
