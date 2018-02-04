@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Recaptcha from 'react-recaptcha';
 import { Button, Input, P, TitleText, UnderlineText } from 'components';
 
 
@@ -45,7 +46,13 @@ export default class Contact extends Component {
             <Input label="Your name" />
             <Input label="Your email address" />
             <Input textarea label="Message" />
-            <div className="flex justify-end">
+            <div className="flex flex-column items-end">
+              <Recaptcha
+                render="explicit"
+                verifyCallback={(v) => console.log('verify callback', v)}
+                onloadCallback={(l) => console.log('laod callaback', l)}
+                sitekey="6LcsRkQUAAAAAIwxOIsH5pdvAwZxFGYZ1bYORec_"
+              />
               <Button extraStyles="mv4" type="submit">send message</Button>
             </div>
           </form>
