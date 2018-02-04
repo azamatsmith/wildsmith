@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Recaptcha from 'react-recaptcha';
-import { Button, Input } from 'components';
+import { Button, Email, Input } from 'components';
 
 
 export default class ContactForm extends React.Component {
@@ -59,13 +59,7 @@ export default class ContactForm extends React.Component {
   _renderError = () => (
     <p className="sans-serif red pt2">
       Unable to submit form at this time. Please email us at &nbsp;
-      <a
-        className="link dim"
-        href="mailto:hello@wildsmithstudio.com?Subject=Hello%20Wildsmith"
-        target="_blank"
-      >
-      hello@wildsmithstudio.com
-      </a>
+      <Email />
     </p>
   )
 

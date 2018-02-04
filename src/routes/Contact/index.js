@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { P, TitleText, UnderlineText } from 'components';
+import { Email, P, TitleText, UnderlineText } from 'components';
 import ContactForm from './components/ContactForm';
 import SubmittedForm from './components/SubmittedForm';
 
@@ -30,7 +30,7 @@ export default class Contact extends Component {
             We’d love to grab you a coffee or jump on a call to chat about your project.
           </P>
           <P extraStyles="mt0 tc">
-            Email us at hello@wildsmithstudio.com or send us a message.
+            Email us at <Email /> or send us a message.
           </P>
         </div>
         <div className="flex justify-center">

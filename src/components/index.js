@@ -1,4 +1,5 @@
 export { default as Button } from './Button';
+export { default as Email } from './Email';
 export { default as Header } from './Header';
 export { default as Instafeed } from './Instafeed';
 export { default as Input } from './Input';
