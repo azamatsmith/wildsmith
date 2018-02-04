@@ -19,12 +19,12 @@ class TemplateWrapper extends Component {
     const {children, location} = this.props;
     return (
       <ApolloProvider client={client}>
-        <div>
+        <div className="Template">
           <Helmet
             title="wildsmith studio"
             meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
+              { name: 'description', content: 'Wildsmith Studio' },
+              { name: 'keywords', content: 'Design, Development, UI, UX, App, Denver, Colorado' },
             ]}
           />
           <Navbar currentRoute={location.pathname}/>

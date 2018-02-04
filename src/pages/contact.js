@@ -1,25 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { Contact } from 'routes';
 
-
-export default class Contact extends Component {
-  static propTypes = {
-
-  }
-
-  static defaultProps = {
-
-  }
-
-  state = {
-
-  }
-
-  render() {
-    return (
-      <div>
-       contact
-      </div>
-    );
-  }
-}
+export default () => <Contact />;

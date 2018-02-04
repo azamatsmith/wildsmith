@@ -16,6 +16,21 @@
   font-size: 71px;
 }
 
+.h-18px {
+  height: 18px; 
+}
+
+
 .transition-3 {
   transition: .3s ease-in-out;
+}
+
+
+// Overwrite link:focus -- no outline
+.link:focus {
+  outline: none;
+}
+
+.karla {
+  font-family: Karla
 }

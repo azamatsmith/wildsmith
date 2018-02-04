@@ -3,21 +3,19 @@ import PropTypes from 'prop-types';
 
 export default class TitleText extends Component {
   static propTypes = {
-    el: PropTypes.element,
-    fontSize: PropTypes.number,
+    extraStyles: PropTypes.string,
     fontWeight: PropTypes.string,
   };
 
   static defaultProps = {
-    element: 'span',
-    fontSize: 71,
+    extraStyles: '',
     fontWeight: 'normal',
   };
 
   render() {
-    const { children, el, fontWeight, fontSize } = this.props;
+    const { children, extraStyles } = this.props;
     return (
-      <h1 style={{ fontSize, fontWeight }} className="TitleText near-black butler f-70">
+      <h1 className={`TitleText near-black butler f-70 z-1 ${extraStyles}`}>
         {children}
       </h1>
     );
