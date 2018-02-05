@@ -1,0 +1,36 @@
+@import 'variables'; // Must appear before tachyons.scss
+@import '~tachyons-sass/tachyons.scss';
+
+// fonts
+.butler {
+  font-family: Butler;
+}
+
+// Backgrounds
+.bg-orange {
+  background-color: $orange;
+}
+
+// Sizes
+.f-70 {
+  font-size: 71px;
+}
+
+.h-18px {
+  height: 18px; 
+}
+
+
+.transition-3 {
+  transition: .3s ease-in-out;
+}
+
+
+// Overwrite link:focus -- no outline
+.link:focus {
+  outline: none;
+}
+
+.karla {
+  font-family: Karla
+}
