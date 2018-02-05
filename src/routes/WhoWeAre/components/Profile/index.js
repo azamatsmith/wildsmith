@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import { Icon } from 'components';
-import rachel from './images/rachel-profile.png'
-import matt from './images/matt-profile.png'
-
+import rachel from './images/rachel-profile.png';
+import matt from './images/matt-profile.png';
 
 export default class Profile extends React.Component {
   static propTypes = {
@@ -12,11 +11,8 @@ export default class Profile extends React.Component {
     instagram: PropTypes.string,
     linkedin: PropTypes.string,
     twitter: PropTypes.string,
-    name: PropTypes.oneOf([
-      'rachel',
-      'matt'
-    ]).isRequired,
-  }
+    name: PropTypes.oneOf(['rachel', 'matt']).isRequired,
+  };
 
   render() {
     const { extraStyles, instagram, linkedin, name, twitter } = this.props;

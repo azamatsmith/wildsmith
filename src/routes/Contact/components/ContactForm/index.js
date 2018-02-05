@@ -4,11 +4,10 @@ import axios from 'axios';
 import Recaptcha from 'react-recaptcha';
 import { Button, Email, Input } from 'components';
 
-
 export default class ContactForm extends React.Component {
   static propTypes = {
     handleSuccess: PropTypes.func.isRequired,
-  }
+  };
 
   state = {
     error: false,
@@ -16,11 +15,11 @@ export default class ContactForm extends React.Component {
     email: '',
     message: '',
     loading: false,
-  }
+  };
 
   // PRIVATE
 
-  _handleSubmit = (e) => {
+  _handleSubmit = e => {
     e.preventDefault();
 
     const { loading, ...state } = this.state;
@@ -30,23 +29,24 @@ export default class ContactForm extends React.Component {
     }
 
     this.setState({ error: false, loading: true }, () => {
-      axios.post(process.env.CONTACT_URI, state)
-      .then(({data}) => {
-        this.setState({ loading: false });
-        if (data.success) {
-          return this.setState({ email: '', name: '', message: '' }, () => {
-            this.props.handleSuccess();
-          });
-        }
-        // error
-        this.setState({ error: true })
-      })
-      .catch(err => {
-        this.setState({ error: true, loading: false });
-        console.log('error submitting form', err)
-      })
-    })
-  }
+      axios
+        .post(process.env.CONTACT_URI, state)
+        .then(({ data }) => {
+          this.setState({ loading: false });
+          if (data.success) {
+            return this.setState({ email: '', name: '', message: '' }, () => {
+              this.props.handleSuccess();
+            });
+          }
+          // error
+          this.setState({ error: true });
+        })
+        .catch(err => {
+          this.setState({ error: true, loading: false });
+          console.log('error submitting form', err);
+        });
+    });
+  };
 
   _isValid = () => {
     const { email, name, message } = this.state;
@@ -54,14 +54,14 @@ export default class ContactForm extends React.Component {
       return true;
     }
     return false;
-  }
+  };
 
   _renderError = () => (
     <p className="sans-serif red pt2">
       Unable to submit form at this time. Please email us at &nbsp;
       <Email />
     </p>
-  )
+  );
 
   render() {
     const { error, loading } = this.state;
@@ -91,14 +91,16 @@ export default class ContactForm extends React.Component {
         <div className="flex flex-column items-end">
           <Recaptcha
             render="explicit"
-            verifyCallback={(v) => console.log('verify callback', v)}
-            onloadCallback={(l) => console.log('laod callaback', l)}
+            verifyCallback={v => console.log('verify callback', v)}
+            onloadCallback={l => console.log('laod callaback', l)}
             sitekey="6LcsRkQUAAAAAIwxOIsH5pdvAwZxFGYZ1bYORec_"
           />
 
-          { error ? this._renderError() : null }
+          {error ? this._renderError() : null}
 
-          <Button extraStyles="mv4" loading={loading} type="submit">send message</Button>
+          <Button extraStyles="mv4" loading={loading} type="submit">
+            send message
+          </Button>
         </div>
       </form>
     );

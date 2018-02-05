@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 export default class SelectWork extends Component {
-  static propTypes = {
+  static propTypes = {};
 
-  }
+  static defaultProps = {};
 
-  static defaultProps = {
-
-  }
-
-  state = {
-
-  }
+  state = {};
 
   render() {
-    return (
-      <div>
-        select work
-      </div>
-    );
+    return <div>select work</div>;
   }
 }
