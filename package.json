@@ -1,6 +1,11 @@
 {
   "name": "wildsmith",
   "description": "wildsmith studio site",
+  "homepage": "https://www.wildsmithstudio.com",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/wildsmithstudio/wildsmith"
+  },
   "version": "1.0.0",
   "author": "Matthew Smith",
   "dependencies": {
@@ -25,7 +30,7 @@
     "tachyons-sass": "^4.9.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby, wildsmith studio, ui, ux, development, react, react-native"
   ],
   "license": "MIT",
   "main": "n/a",
