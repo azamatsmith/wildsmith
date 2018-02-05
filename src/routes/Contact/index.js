@@ -27,7 +27,7 @@ export default class Contact extends Component {
             text="contact us"
           />
           <P extraStyles="mt0 tc">
-            We’d love to grab you a coffee or jump on a call to chat about your project.
+            We’d love to grab coffee with you or jump on a call to chat about your project.
           </P>
           <P extraStyles="mt0 tc">
             Email us at <Email /> or send us a message.
