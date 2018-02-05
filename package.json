@@ -17,6 +17,7 @@
     "gatsby-transformer-sharp": "^1.6.17",
     "graphql-tag": "^2.6.1",
     "node-fetch": "^2.0.0",
+    "node-sass": "^4.7.2",
     "react-apollo": "^2.0.4",
     "react-helmet": "^5.2.0",
     "react-progressive-image": "^0.3.0",
