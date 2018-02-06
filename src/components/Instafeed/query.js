@@ -20,6 +20,7 @@ export default gql`
           width
           url
         }
+        link
       }
       caption {
         text
