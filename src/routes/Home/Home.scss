@@ -1,13 +1,13 @@
 .Home-underline {
-  left: 240px;
-  top: 95px;
-  transition: width 250ms ease-out;
+  bottom: 70px;
+  left: 282px;
+  transition: width 250ms ease-in;
   width: 0px;
   z-index: -10;
 }
 
 .Home-underline.active {
-  width: 145px;
+  width: 155px;
 }
 
 .mt-2 {

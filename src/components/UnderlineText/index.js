@@ -17,7 +17,7 @@ export default class UnderlineText extends React.Component {
   render() {
     const { extraStyles, highlightStyle, text } = this.props;
     const thisHighlightStyle = {
-      bottom: '60px',
+      bottom: '72px',
       width: '200px',
       ...highlightStyle,
     };
