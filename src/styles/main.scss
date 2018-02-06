@@ -7,24 +7,16 @@
 }
 
 // Backgrounds
-.bg-orange {
-  background-color: $orange;
-}
 
 // Sizes
-.f-70 {
-  font-size: 71px;
-}
 
 .h-18px {
-  height: 18px; 
+  height: 18px;
 }
-
 
 .transition-3 {
-  transition: .3s ease-in-out;
+  transition: .1.5s ease-in;
 }
-
 
 // Overwrite link:focus -- no outline
 .link:focus {

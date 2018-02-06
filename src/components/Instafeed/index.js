@@ -44,7 +44,7 @@ class Instafeed extends Component {
   };
 
   render() {
-    return <div>{this._renderImages()}</div>;
+    return <div className="flex flex-wrap justify-center w-85">{this._renderImages()}</div>;
   }
 }
 
