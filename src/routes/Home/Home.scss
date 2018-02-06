@@ -1,0 +1,15 @@
+.Home-underline {
+  bottom: 70px;
+  left: 282px;
+  transition: width 250ms ease-in;
+  width: 0px;
+  z-index: -10;
+}
+
+.Home-underline.active {
+  width: 155px;
+}
+
+.mt-2 {
+  margin-top: -2rem;
+}

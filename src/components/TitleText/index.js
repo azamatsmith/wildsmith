@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './TitleText.css';
+import './TitleText.scss';
 
 export default class TitleText extends Component {
   static propTypes = {
-    el: PropTypes.element,
-    fontSize: PropTypes.number,
+    extraStyles: PropTypes.string,
     fontWeight: PropTypes.string,
   };
 
   static defaultProps = {
-    element: 'span',
-    fontSize: 71,
+    extraStyles: '',
     fontWeight: 'normal',
   };
 
   render() {
-    const { children, el, fontWeight, fontSize } = this.props;
+    const { children, extraStyles } = this.props;
     return (
-      <span style={{ fontSize, fontWeight }} className="TitleText">
+      <h1 className={`TitleText near-black butler f-80 z-1 mt6 ${extraStyles}`}>
         {children}
-      </span>
+      </h1>
     );
   }
 }
