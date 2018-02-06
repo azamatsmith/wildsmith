@@ -19,6 +19,7 @@ export default class Contact extends Component {
   };
 
   render() {
+    const { submitted } = this.state;
     return (
       <div className="Contact">
         <div className="flex flex-column items-center">
@@ -27,13 +28,15 @@ export default class Contact extends Component {
             highlightStyle={{ left: '-15px', width: '240px' }}
             text="contact us"
           />
-          <P extraStyles="mt0 tc">
-            We’d love to grab coffee with you or jump on a call to chat about
-            your project.
-          </P>
-          <P extraStyles="mt0 tc">
-            Email us at <Email /> or send us a message.
-          </P>
+          <div className={submitted ? 'dn' : ''}>
+            <P extraStyles="mt0 tc">
+              We’d love to grab coffee with you or jump on a call to chat about
+              your project.
+            </P>
+            <P extraStyles="mt0 tc">
+              Email us at <Email /> or send us a message.
+            </P>
+          </div>
         </div>
         <div className="flex justify-center">{this._renderForm()}</div>
       </div>

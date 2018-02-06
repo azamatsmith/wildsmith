@@ -38,8 +38,8 @@ export default class WhoWeAre extends React.Component {
             </P>
             <P extraStyles={pStyle}>
               Matt Smith is a full-stack developer. He has developed software
-              for the US Airforce , Department of Veteran Affairs, numerous
-              startups , as well as launched several of his own apps and
+              for the US Airforce, Department of Veteran Affairs, numerous
+              startups, as well as launched several of his own apps and
               projects.
             </P>
           </div>
