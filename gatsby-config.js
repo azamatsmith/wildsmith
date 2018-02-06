@@ -12,7 +12,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
-        path: `${__dirname}/src/routes/WhoWeAre/components/Profile/images/`
+        path: `${__dirname}/src/images/`
       }
     },
   ],

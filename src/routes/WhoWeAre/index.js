@@ -4,7 +4,19 @@ import { P, UnderlineText } from 'components';
 import Profile from './components/Profile';
 
 export default class WhoWeAre extends React.Component {
+  static propTypes = {
+    mattProfile: PropTypes.shape({
+      sizes: PropTypes.object,
+    }),
+    rachelProfile: PropTypes.shape({
+      sizes: PropTypes.object,
+    }),
+  }
+
+  static defaultProps = {}
+
   render() {
+    const { mattProfile, rachelProfile } = this.props;
     const pStyle = 'measure-wide lh-copy';
     return (
       <div className="WhoWeAre">
@@ -35,6 +47,7 @@ export default class WhoWeAre extends React.Component {
 
         <div className="flex justify-center mv4">
           <Profile
+            image={rachelProfile}
             instagram="https://www.instagram.com/rachelcope/"
             linkedin="https://www.linkedin.com/in/rachel-cope-8aab126"
             twitter="https://www.twitter.com/rachelcope"
@@ -42,6 +55,7 @@ export default class WhoWeAre extends React.Component {
             name="rachel"
           />
           <Profile
+            image={mattProfile}
             instagram="https://www.instagram.com/azamatsmith"
             linkedin="https://www.linkedin.com/in/azamatsmith"
             twitter="https://www.twitter.com/azamatsmith"
