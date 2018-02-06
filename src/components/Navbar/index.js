@@ -13,30 +13,34 @@ export default class Navbar extends Component {
   // PRIVATE
 
   _getClass = (name, index) => {
-    const baseClass = `Navbar-link link-${index} w-25 link black b f6 f5-ns dib pt4`;
+    const baseClass = `Navbar-link link-${index} link black b f6 f5-ns dib pt4`;
     return this.props.currentRoute === name ? `${baseClass} active` : baseClass;
   };
 
   render() {
+    const width = '33%';
     return (
       <nav className="Navbar w-100 flex justify-end">
-        <div className="w-50">
-          <GatsbyLink className={this._getClass('/', 0)} to="/">
+        <div className="w-40">
+          <GatsbyLink
+            className={this._getClass('/', 0)}
+            to="/"
+            style={{ width }}
+          >
             home
           </GatsbyLink>
           <GatsbyLink
-            className={this._getClass('/select-work', 1)}
-            to="/select-work"
-          >
-            select work
-          </GatsbyLink>
-          <GatsbyLink
-            className={this._getClass('/who-we-are', 2)}
+            className={this._getClass('/who-we-are', 1)}
             to="/who-we-are"
+            style={{ width }}
           >
             who we are
           </GatsbyLink>
-          <GatsbyLink className={this._getClass('/contact', 3)} to="/contact">
+          <GatsbyLink
+            className={this._getClass('/contact', 2)}
+            to="/contact"
+            style={{ width }}
+          >
             contact
           </GatsbyLink>
           <hr
