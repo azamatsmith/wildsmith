@@ -6,10 +6,10 @@ import Profile from './components/Profile';
 export default class WhoWeAre extends React.Component {
   static propTypes = {
     mattProfile: PropTypes.shape({
-      sizes: PropTypes.object,
+      resolutions: PropTypes.object,
     }),
     rachelProfile: PropTypes.shape({
-      sizes: PropTypes.object,
+      resolutions: PropTypes.object,
     }),
   }
 

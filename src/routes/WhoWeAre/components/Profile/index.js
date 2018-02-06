@@ -9,7 +9,7 @@ export default class Profile extends React.Component {
   static propTypes = {
     extraStyles: PropTypes.string,
     image: PropTypes.shape({
-      sizes: PropTypes.object,
+      resolutions: PropTypes.object,
     }),
     instagram: PropTypes.string,
     linkedin: PropTypes.string,
@@ -18,12 +18,19 @@ export default class Profile extends React.Component {
   };
 
   render() {
-    const { extraStyles, image, instagram, linkedin, name, twitter } = this.props;
+    const {
+      extraStyles,
+      image,
+      instagram,
+      linkedin,
+      name,
+      twitter,
+    } = this.props;
     const linkStyle = 'dim link pointer ma3';
 
     return (
       <div className={`Profile flex flex-column ${extraStyles}`}>
-        <Image sizes={image.sizes} />
+        <Image resolutions={image.resolutions} />
         <div className="flex justify-center items-center">
           <a className={linkStyle} href={instagram} target="_blank">
             <Icon name="instagram" />
@@ -39,4 +46,3 @@ export default class Profile extends React.Component {
     );
   }
 }
-
