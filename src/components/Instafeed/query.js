@@ -24,6 +24,7 @@ export default gql`
       caption {
         text
       }
+      link
     }
   }
 `;

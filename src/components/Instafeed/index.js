@@ -39,12 +39,20 @@ class Instafeed extends Component {
       return null;
     }
     return this.props.data.photoList.map(image => {
-      return <Image key={image.id} {...image} />;
+      return (
+        <a href={image.link} target="_blank" key={image.id} className="cursor">
+          <Image {...image} />
+        </a>
+      );
     });
   };
 
   render() {
-    return <div className="flex flex-wrap justify-center w-85">{this._renderImages()}</div>;
+    return (
+      <div className="flex flex-wrap justify-center w-85">
+        {this._renderImages()}
+      </div>
+    );
   }
 }
 

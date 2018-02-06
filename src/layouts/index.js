@@ -4,7 +4,7 @@ import { ApolloProvider } from 'react-apollo';
 import Helmet from 'react-helmet';
 import client from 'utils/apollo';
 
-import { Header, Navbar } from 'components';
+import { Header, Footer, Navbar } from 'components';
 import '../styles/main.scss';
 
 class TemplateWrapper extends Component {
@@ -21,7 +21,7 @@ class TemplateWrapper extends Component {
       <ApolloProvider client={client}>
         <div className="Template">
           <Helmet
-            title="wildsmith studio"
+            title="Wildsmith Studio"
             meta={[
               { name: 'description', content: 'Wildsmith Studio' },
               {
@@ -33,6 +33,7 @@ class TemplateWrapper extends Component {
           <Navbar currentRoute={location.pathname} />
           <Header />
           <div>{children()}</div>
+          <Footer />
         </div>
       </ApolloProvider>
     );
