@@ -3,23 +3,25 @@
 
 
 .link-0.active ~ hr { 
-  margin-left: 1%; 
+  margin-left: 2px; 
+  max-width: 9%;
 }
+
 .link-1.active ~ hr { 
-  margin-left: 26%; 
+  margin-left: calc(33% + 2px); 
+  max-width: 17%;
 }
 
 .link-2.active ~ hr { 
-  // margin-left: percent(2 * $percent); 
-  margin-left: 51%; 
+  margin-left: calc(66% + 2px); 
+  max-width: 11%;
 }
 
-.link-3.active ~ hr { 
-  // margin-left: percent(3 * $percent); 
-  margin-left: 76%; 
-}
+// .link-3.active ~ hr { 
+//   // margin-left: percent(3 * $percent); 
+//   margin-left: 76%; 
+// }
 
 .Navbar-hr {
   margin-top: -5px;
-  max-width: 10%;
 }
