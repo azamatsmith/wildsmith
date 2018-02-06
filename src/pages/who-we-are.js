@@ -6,12 +6,12 @@ export default ({ data }) => <WhoWeAre {...data} />;
 export const query = graphql`
   query ProfileImageQuery {
     mattProfile: imageSharp(id: { regex: "/matt-profile.png/" }) {
-      resolutions(width: 340, height: 340) {
+      resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }
     }
     rachelProfile: imageSharp(id: { regex: "/rachel-profile.png/" }) {
-      resolutions(width: 340, height: 340) {
+      resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }
     }
