@@ -18,7 +18,14 @@ export default class Profile extends React.Component {
   };
 
   render() {
-    const { extraStyles, image, instagram, linkedin, name, twitter } = this.props;
+    const {
+      extraStyles,
+      image,
+      instagram,
+      linkedin,
+      name,
+      twitter,
+    } = this.props;
     const linkStyle = 'dim link pointer ma3';
 
     return (
@@ -39,4 +46,3 @@ export default class Profile extends React.Component {
     );
   }
 }
-

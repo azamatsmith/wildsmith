@@ -11,9 +11,9 @@ export default class WhoWeAre extends React.Component {
     rachelProfile: PropTypes.shape({
       sizes: PropTypes.object,
     }),
-  }
+  };
 
-  static defaultProps = {}
+  static defaultProps = {};
 
   render() {
     const { mattProfile, rachelProfile } = this.props;
