@@ -33,10 +33,11 @@ export default class Home extends Component {
     }`;
     return (
       <div className="Home flex flex-column justify-center items-center">
-        <div className="Home-text-wrapper relative mt3">
+        <div className="Home-text-wrapper relative mt6">
           <TitleText fontWeight="bold">we are wildsmith.</TitleText>
           <div className={highlightClass} />
         </div>
+        <p className="mt-2 mb7 sans-serif near-black">Product Stategy | UX Design | Development</p>
         <Instafeed />
       </div>
     );
