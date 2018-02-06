@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { P } from 'components';
 
-
 export default class Footer extends React.Component {
-  static propTypes = {}
+  static propTypes = {};
 
-  static defaultProps = {}
+  static defaultProps = {};
 
   render() {
     const year = new Date().getFullYear();
