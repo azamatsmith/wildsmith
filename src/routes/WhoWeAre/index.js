@@ -11,9 +11,9 @@ export default class WhoWeAre extends React.Component {
     rachelProfile: PropTypes.shape({
       resolutions: PropTypes.object,
     }),
-  }
+  };
 
-  static defaultProps = {}
+  static defaultProps = {};
 
   render() {
     const { mattProfile, rachelProfile } = this.props;
@@ -32,8 +32,8 @@ export default class WhoWeAre extends React.Component {
             </P>
             <P extraStyles={pStyle}>
               Rachel Cope has over 8 years of experience in UI, UX, product
-              design, and strategy. She co-founded a web app and has worked as a design
-              consultant with dozens of clients across the US, Europe,
+              design, and strategy. She co-founded a web app and has worked as a
+              design consultant with dozens of clients across the US, Europe,
               and Mexico.
             </P>
             <P extraStyles={pStyle}>

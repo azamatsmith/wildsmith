@@ -28,9 +28,10 @@ export default class ContactForm extends React.Component {
       return;
     }
 
-    const URI = process.env === "development"
-      ? 'http://localhost:3746/contact'
-      : 'https://wildsmith-instagram.herokuapp.com/contact';
+    const URI =
+      process.env === 'development'
+        ? 'http://localhost:3746/contact'
+        : 'https://wildsmith-instagram.herokuapp.com/contact';
 
     this.setState({ error: false, loading: true }, () => {
       axios

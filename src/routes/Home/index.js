@@ -37,7 +37,9 @@ export default class Home extends Component {
           <TitleText fontWeight="bold">we are wildsmith.</TitleText>
           <div className={highlightClass} />
         </div>
-        <p className="mt-2 mb7 sans-serif near-black">Product Stategy | UX Design | Development</p>
+        <p className="mt-2 mb7 sans-serif near-black">
+          Product Stategy | UX Design | Development
+        </p>
         <Instafeed />
       </div>
     );
