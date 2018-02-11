@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TitleText } from 'components';
+import {TitleText} from 'components';
+import './UnderlineText.scss';
 
 export default class UnderlineText extends React.Component {
   static propTypes = {
@@ -15,16 +16,17 @@ export default class UnderlineText extends React.Component {
   };
 
   render() {
-    const { extraStyles, highlightStyle, text } = this.props;
+    const {extraStyles, highlightStyle, text} = this.props;
     const thisHighlightStyle = {
-      bottom: '72px',
-      width: '200px',
       ...highlightStyle,
     };
     return (
       <div className={`UnderlineText flex flex-column relative ${extraStyles}`}>
         <TitleText>{text}</TitleText>
-        <div className="bg-orange absolute h-18px" style={thisHighlightStyle} />
+        <div
+          className="UnderlineText-highlight bg-orange absolute"
+          style={thisHighlightStyle}
+        />
       </div>
     );
   }

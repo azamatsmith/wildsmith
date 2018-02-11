@@ -13,7 +13,7 @@ export default class Navbar extends Component {
   // PRIVATE
 
   _getClass = (name, index) => {
-    const baseClass = `Navbar-link link-${index} link near-black b f6 f5-ns dib pt4 tc l-ns`;
+    const baseClass = `Navbar-link link-${index} link near-black b f6 f5-ns dib pt4 tc tl-ns`;
     return this.props.currentRoute === name ? `${baseClass} active` : baseClass;
   };
 

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default ({ children, extraStyles = '' }) => (
-  <p className={`f4 mid-gray sans-serif ${extraStyles}`}>{children}</p>
+export default ({children, extraStyles = ''}) => (
+  <p className={`f5 f4-ns mid-gray sans-serif ${extraStyles}`}>{children}</p>
 );
