@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Instafeed, TitleText } from 'components';
+import React, {Component} from 'react';
+import {Instafeed, TitleText} from 'components';
 import PropTypes from 'prop-types';
 import './Home.scss';
 
@@ -17,7 +17,7 @@ export default class Home extends Component {
   componentDidMount() {
     setTimeout(() => {
       if (this.mounted) {
-        this.setState({ highlightActive: true });
+        this.setState({highlightActive: true});
       }
     }, 1000);
   }
@@ -27,13 +27,13 @@ export default class Home extends Component {
   }
 
   render() {
-    const { highlightActive } = this.state;
-    const highlightClass = `Home-underline h-18px bg-orange absolute ${
+    const {highlightActive} = this.state;
+    const highlightClass = `Home-underline bg-orange absolute ${
       highlightActive ? 'active' : ''
     }`;
     return (
       <div className="Home flex flex-column justify-center items-center">
-        <div className="Home-text-wrapper relative mt6">
+        <div className="Home-text-wrapper relative mb2 mt2 tc mb0-ns mt6-ns">
           <TitleText fontWeight="bold">we are wildsmith.</TitleText>
           <div className={highlightClass} />
         </div>

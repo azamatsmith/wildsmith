@@ -1,26 +1,20 @@
-// $numberLinks: 4;
-// $percent: percentage($numberLinks / 100);
+@import '~styles/variables'; // Must appear before tachyons.scss
+@import '~tachyons-sass/tachyons.scss';
 
-
-.link-0.active ~ hr { 
-  margin-left: 2px; 
-  max-width: 9%;
+.link-0.active ~ hr {
+  margin-left: 20px;
+  max-width: 20%;
 }
 
-.link-1.active ~ hr { 
-  margin-left: calc(33% + 2px); 
-  max-width: 17%;
+.link-1.active ~ hr {
+  margin-left: calc(33% + 20px);
+  max-width: 20%;
 }
 
-.link-2.active ~ hr { 
-  margin-left: calc(66% + 2px); 
-  max-width: 11%;
+.link-2.active ~ hr {
+  margin-left: calc(66% + 20px);
+  max-width: 20%;
 }
-
-// .link-3.active ~ hr { 
-//   // margin-left: percent(3 * $percent); 
-//   margin-left: 76%; 
-// }
 
 .Navbar-hr {
   margin-top: -5px;
@@ -28,4 +22,24 @@
 
 .transition-3 {
   transition: 250ms ease-in;
+}
+
+/*===========================================
+            BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 30em) {
+  .link-0.active ~ hr {
+    margin-left: 2px;
+    max-width: 9%;
+  }
+
+  .link-1.active ~ hr {
+    margin-left: calc(33% + 2px);
+    max-width: 17%;
+  }
+
+  .link-2.active ~ hr {
+    margin-left: calc(66% + 2px);
+    max-width: 11%;
+  }
 }

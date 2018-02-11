@@ -1,15 +1,35 @@
 .Home-underline {
-  bottom: 70px;
-  left: 282px;
+  bottom: 46px;
+  left: 80px;
+  height: 9px;
   transition: width 250ms ease-in;
   width: 0px;
   z-index: -10;
 }
 
+.h-9px {
+  height: 9px;
+}
+
 .Home-underline.active {
-  width: 155px;
+  width: 95px;
 }
 
 .mt-2 {
   margin-top: -2rem;
+}
+
+/*===========================================
+            BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 30em) {
+  .Home-underline {
+    bottom: 70px;
+    height: 18px;
+    left: 282px;
+  }
+
+  .Home-underline.active {
+    width: 155px;
+  }
 }

@@ -1,0 +1,16 @@
+.UnderlineText-highlight {
+  bottom: 44px;
+  height: 9px;
+  width: 100px;
+}
+
+/*===========================================
+            BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 30em) {
+  .UnderlineText-highlight {
+    bottom: 72px;
+    height: 18px;
+    width: 200px;
+  }
+}

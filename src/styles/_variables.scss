@@ -6,9 +6,9 @@
 // i.e.
 // $red: #000;
 
-
-
-$sans-serif: 'karla', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif !default;
+$sans-serif: 'karla', -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+  helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
+  sans-serif !default;
 // $serif: georgia, serif !default;
 // $code: consolas, monaco, monospace !default;
 // $font-size-headline: 6rem !default;
@@ -77,13 +77,13 @@ $sans-serif: 'karla', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 
 // $box-shadow-5: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ) !default;
 // $black: #000 !default;
 $near-black: #424242 !default; // Modified
-$dark-gray: #4A4A4A !default; // Modified
-$mid-gray: #4B4F56 !default; // Modified, used in P
+$dark-gray: #4a4a4a !default; // Modified
+$mid-gray: #4b4f56 !default; // Modified, used in P
 // $gray: #777 !default;
 // $silver: #999 !default;
 // $light-silver: #aaa !default;
-$moon-gray: #F7F6F5 !default; // Modified, used in Footer
-$light-gray: #D1D1D1 !default; // Modified, input border
+$moon-gray: #f7f6f5 !default; // Modified, used in Footer
+$light-gray: #d1d1d1 !default; // Modified, input border
 // $near-white: #f4f4f4 !default;
 // $white: #fff !default;
 // $transparent: transparent !default;
@@ -114,7 +114,7 @@ $light-gray: #D1D1D1 !default; // Modified, input border
 // $dark-red: #e7040f !default;
 // $red: #ff4136 !default;
 // $light-red: #ff725c !default;
-$orange: #E6BF9D !default; // Modified
+$orange: #e6bf9d !default; // Modified
 // $gold: #ffb700 !default;
 // $yellow: #ffd700 !default;
 // $light-yellow: #fbf1a9 !default;
@@ -136,7 +136,6 @@ $orange: #E6BF9D !default; // Modified
 // $washed-green: #e8fdf5 !default;
 // $washed-yellow: #fffceb !default;
 // $washed-red: #ffdfdf !default;
-
 
 // // Custom Media Query Variables
 // $breakpoint-not-small: 'screen and (min-width: 30em)' !default;
