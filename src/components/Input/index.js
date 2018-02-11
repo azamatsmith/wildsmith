@@ -20,10 +20,10 @@ export default class Input extends React.Component {
   );
 
   render() {
-    const { label, textarea, ...rest } = this.props;
+    const {label, textarea, ...rest} = this.props;
     const baseClass = 'ba br2 b--light-gray pa3 mid-gray outline-0';
     return (
-      <div className="Input flex flex-column">
+      <div className="Input flex flex-column mt3">
         {label ? this._renderLabel() : null}
         {textarea ? (
           <textarea rows="8" className={baseClass} {...rest} />

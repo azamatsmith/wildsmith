@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './TitleText.scss';
 
@@ -14,9 +14,10 @@ export default class TitleText extends Component {
   };
 
   render() {
-    const { children, extraStyles } = this.props;
+    const {children, extraStyles} = this.props;
     return (
-      <h1 className={`TitleText near-black butler f-80 z-1 mt6 ${extraStyles}`}>
+      <h1
+        className={`TitleText near-black butler f1 f-subheadline-ns z-1 mt6 ${extraStyles}`}>
         {children}
       </h1>
     );
