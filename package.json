@@ -35,8 +35,10 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma --single-quote --write \"src/**/*.js\"",
     "test": "jest"
   },
   "devDependencies": {

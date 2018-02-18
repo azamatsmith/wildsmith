@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import Image from 'gatsby-image';
 import { Icon } from 'components';
-import './Profile.scss';
 
 export default class Profile extends React.Component {
   static propTypes = {
@@ -46,3 +45,11 @@ export default class Profile extends React.Component {
     );
   }
 }
+
+export const profileImageFragment = graphql`
+  fragment ProfileImage on ImageSharp {
+    resolutions(width: 339, height: 339) {
+      ...GatsbyImageSharpResolutions
+    }
+  }
+`;
