@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Email, P, TitleText, UnderlineText} from 'components';
+import React, { Component } from 'react';
+import { Email, P, TitleText, UnderlineText } from 'components';
 import ContactForm from './components/ContactForm';
 import SubmittedForm from './components/SubmittedForm';
 
@@ -14,18 +14,18 @@ export default class Contact extends Component {
     return this.state.submitted ? (
       <SubmittedForm />
     ) : (
-      <ContactForm handleSuccess={() => this.setState({submitted: true})} />
+      <ContactForm handleSuccess={() => this.setState({ submitted: true })} />
     );
   };
 
   render() {
-    const {submitted} = this.state;
+    const { submitted } = this.state;
     return (
       <div className="Contact">
         <div className="flex flex-column items-center">
           <UnderlineText
             extraStyles="mb0"
-            highlightStyle={{left: '-15px', width: '240px'}}
+            highlightStyle={{ left: '-15px', width: '240px' }}
             text="contact us"
           />
           <div className={submitted ? 'dn' : ''}>

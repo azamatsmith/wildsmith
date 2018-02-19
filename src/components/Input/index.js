@@ -20,7 +20,7 @@ export default class Input extends React.Component {
   );
 
   render() {
-    const {label, textarea, ...rest} = this.props;
+    const { label, textarea, ...rest } = this.props;
     const baseClass = 'ba br2 b--light-gray pa3 mid-gray outline-0';
     return (
       <div className="Input flex flex-column mt3">

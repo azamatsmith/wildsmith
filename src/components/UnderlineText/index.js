@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {TitleText} from 'components';
+import { TitleText } from 'components';
 import './UnderlineText.scss';
 
 export default class UnderlineText extends React.Component {
@@ -16,7 +16,7 @@ export default class UnderlineText extends React.Component {
   };
 
   render() {
-    const {extraStyles, highlightStyle, text} = this.props;
+    const { extraStyles, highlightStyle, text } = this.props;
     const thisHighlightStyle = {
       ...highlightStyle,
     };
