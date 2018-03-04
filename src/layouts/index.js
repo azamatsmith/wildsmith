@@ -27,6 +27,10 @@ class TemplateWrapper extends Component {
             },
           ]}
         >
+          <meta
+            name="google-site-verification"
+            content="suN54CQEQShPSHv4aERWv0bskIBSLOiESbfYeNXHdNc"
+          />
           <link
             rel="apple-touch-icon"
             sizes="57x57"
