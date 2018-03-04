@@ -3,6 +3,7 @@ module.exports = {
     title: 'Wildsmith Studio site',
   },
   plugins: [
+    'gatsby-wildsmith-instafeed',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
@@ -12,8 +13,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
-        path: `${__dirname}/src/images/`
-      }
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-115047842-1',
+      },
     },
   ],
 };

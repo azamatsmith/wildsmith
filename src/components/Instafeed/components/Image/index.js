@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ProgressiveImage from 'react-progressive-image';
+// import ProgressiveImage from 'react-progressive-image';
 
 export default class Image extends Component {
   static propTypes = {
@@ -33,7 +33,7 @@ export default class Image extends Component {
   _renderImage = (src, loading) => (
     <img
       className="Image-img ma2"
-      style={{ opacity: loading ? 0.5 : 1, maxHeight: '450px', width: 'auto' }}
+      style={{opacity: loading ? 0.5 : 1, maxHeight: '450px', width: 'auto'}}
       src={src}
       alt={this.props.caption.text}
     />
@@ -42,15 +42,6 @@ export default class Image extends Component {
   render() {
     const high = this.props.images.standard_resolution.url;
     const thumb = this.props.images.thumbnail.url;
-    return (
-      <div
-        style={{ height: '450px', width: '450px' }}
-        className="flex justify-center ma2"
-      >
-        <ProgressiveImage src={high} placeholder={thumb}>
-          {this._renderImage}
-        </ProgressiveImage>
-      </div>
-    );
+    return null;
   }
 }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
+// import { graphql } from 'react-apollo';
 import Image from './components/Image';
 import query from './query';
 
@@ -34,7 +34,7 @@ class Instafeed extends Component {
   // PRIVATE
 
   _renderImages = () => {
-    const { photoList } = this.props.data;
+    const {photoList} = this.props.data;
     if (!photoList) {
       return null;
     }
@@ -56,4 +56,4 @@ class Instafeed extends Component {
   }
 }
 
-export default graphql(query)(Instafeed);
+// export default graphql(query)(Instafeed);
