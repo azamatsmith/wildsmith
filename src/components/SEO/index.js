@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
-import Manifest from './components/Manifest';
 import config from './config';
 
 class SEO extends Component {
@@ -16,7 +15,6 @@ class SEO extends Component {
           name="google-site-verification"
           content="suN54CQEQShPSHv4aERWv0bskIBSLOiESbfYeNXHdNc"
         />
-        <Manifest />
       </Helmet>
     );
   }

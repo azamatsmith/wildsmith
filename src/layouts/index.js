@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import {Header, Footer, SEO, Navbar} from 'components';
+import {Header, Footer, SEO, Manifest, Navbar} from 'components';
 import '../styles/main.scss';
 
 class TemplateWrapper extends Component {
@@ -17,6 +17,7 @@ class TemplateWrapper extends Component {
     return (
       <div className="Template">
         <SEO />
+        <Manifest />
         <Navbar currentRoute={location.pathname} />
         <Header />
         <div>{children()}</div>
