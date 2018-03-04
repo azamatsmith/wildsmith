@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Wildsmith Studio site',
+    siteUrl: 'https://www.wildsmithstudio.com',
   },
+
   plugins: [
     'gatsby-wildsmith-instafeed',
     'gatsby-plugin-react-helmet',
@@ -9,6 +11,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
