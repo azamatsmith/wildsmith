@@ -24,7 +24,6 @@ export default class NewInstafeed extends React.Component {
     ));
 
   render() {
-    console.log('newInstafeed props', this.props);
     return (
       <div className="flex flex-wrap mh5 justify-center">
         {this._renderImages()}
