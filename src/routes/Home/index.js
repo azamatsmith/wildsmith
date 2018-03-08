@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {NewInstafeed, TitleText} from 'components';
+import React, { Component } from 'react';
+import { NewInstafeed, TitleText } from 'components';
 import ImagesType from 'components/NewInstafeed/types';
 import PropTypes from 'prop-types';
 import './Home.scss';
@@ -20,7 +20,7 @@ export default class Home extends Component {
   componentDidMount() {
     setTimeout(() => {
       if (this.mounted) {
-        this.setState({highlightActive: true});
+        this.setState({ highlightActive: true });
       }
     }, 1000);
   }
@@ -30,7 +30,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const {highlightActive} = this.state;
+    const { highlightActive } = this.state;
     const highlightClass = `Home-underline bg-orange absolute ${
       highlightActive ? 'active' : ''
     }`;

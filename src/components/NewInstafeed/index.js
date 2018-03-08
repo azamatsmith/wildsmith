@@ -12,7 +12,7 @@ export default class NewInstafeed extends React.Component {
   // PRIVATE
 
   _renderImages = () =>
-    this.props.data.allFile.edges.map(({node}) => (
+    this.props.data.allFile.edges.map(({ node }) => (
       <a href={node.fields.link} target="_blank" rel="noopener noreferrer">
         <Img
           className=""
@@ -35,7 +35,7 @@ export default class NewInstafeed extends React.Component {
 
 export const instagramImagesFragment = graphql`
   fragment InstagramImages on RootQueryType {
-    allFile(filter: {fields: {InstagramImage: {eq: "true"}}}) {
+    allFile(filter: { fields: { InstagramImage: { eq: "true" } } }) {
       edges {
         node {
           fields {

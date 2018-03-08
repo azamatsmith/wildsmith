@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import {Header, Footer, Navbar} from 'components';
+import { Header, Footer, Navbar } from 'components';
 import '../styles/main.scss';
 
 class TemplateWrapper extends Component {
@@ -14,13 +14,13 @@ class TemplateWrapper extends Component {
   };
 
   render() {
-    const {children, location} = this.props;
+    const { children, location } = this.props;
     return (
       <div className="Template">
         <Helmet
           title="Wildsmith Studio"
           meta={[
-            {name: 'description', content: 'Wildsmith Studio'},
+            { name: 'description', content: 'Wildsmith Studio' },
             {
               name: 'keywords',
               content: 'Design, Development, UI, UX, App, Denver, Colorado',

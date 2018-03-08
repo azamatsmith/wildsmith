@@ -1,16 +1,6 @@
 const path = require('path');
 const {createFilePath} = require('gatsby-source-filesystem');
 
-// You can delete this file if you're not using it
-exports.modifyWebpackConfig = ({config}) => {
-  const newConfig = {...config};
-  const loadersArr = ['style', 'css?sourceMap', 'sass', 'sass?sourceMap'];
-  if (config._loaders.sass.config.loaders) {
-    newConfig._loaders.sass.config.loaders = loadersArr;
-  }
-  return newConfig;
-};
-
 exports.createPages = ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators;
   new Promise((resolve, reject) => {
@@ -19,11 +9,17 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              sort: {fields: [frontmatter___date], order: DESC}
+              limit: 1000
+            ) {
               edges {
                 node {
                   fields {
                     slug
+                  }
+                  frontmatter {
+                    title
                   }
                 }
               }

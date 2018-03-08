@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { graphql } from 'react-apollo';
 import Image from './components/Image';
@@ -34,7 +34,7 @@ class Instafeed extends Component {
   // PRIVATE
 
   _renderImages = () => {
-    const {photoList} = this.props.data;
+    const { photoList } = this.props.data;
     if (!photoList) {
       return null;
     }

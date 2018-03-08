@@ -8,12 +8,20 @@ module.exports = {
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/pages/blog`,
       },
     },
     {
