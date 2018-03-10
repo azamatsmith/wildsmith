@@ -9,17 +9,11 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       graphql(
         `
           {
-            allMarkdownRemark(
-              sort: {fields: [frontmatter___date], order: DESC}
-              limit: 1000
-            ) {
+            allMarkdownRemark {
               edges {
                 node {
                   fields {
                     slug
-                  }
-                  frontmatter {
-                    title
                   }
                 }
               }
@@ -34,6 +28,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
         posts.forEach((post, index) => {
+          console.log('post is: ', post);
           createPage({
             path: post.node.fields.slug,
             component: blogPost,
@@ -53,11 +48,10 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({node, getNode});
-    console.log('node', node);
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: `/blog${value}`,
     });
   }
 };

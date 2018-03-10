@@ -3,13 +3,23 @@ module.exports = {
     title: 'Wildsmith Studio site',
   },
   plugins: [
+    'wildsmith-blog',
     'gatsby-wildsmith-instafeed',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-prismjs',
+          'gatsby-remark-images',
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
