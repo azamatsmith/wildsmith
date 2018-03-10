@@ -1,6 +1,6 @@
 ---
 author: Matt Smith
-categories: javascript, building
+tags: javascript, building
 date: 2018-03-08
 test: another
 title: something

@@ -15,6 +15,9 @@ exports.createPages = ({graphql, boundActionCreators}) => {
                   fields {
                     slug
                   }
+                  frontmatter {
+                    tags
+                  }
                 }
               }
             }
@@ -28,7 +31,6 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
         posts.forEach((post, index) => {
-          console.log('post is: ', post);
           createPage({
             path: post.node.fields.slug,
             component: blogPost,
@@ -52,6 +54,15 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       name: `slug`,
       node,
       value: `/blog${value}`,
+    });
+    // create tags nodes
+    let tags = node.frontmatter.tags
+      ? node.frontmatter.tags.split(',').map(cat => cat.trim())
+      : [];
+    createNodeField({
+      name: `tags`,
+      node,
+      value: tags,
     });
   }
 };
