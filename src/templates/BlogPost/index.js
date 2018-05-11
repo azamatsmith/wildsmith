@@ -14,7 +14,7 @@ export default class BlogPost extends React.Component {
     const {fields, frontmatter, html} = this.props.data.markdownRemark;
 
     return (
-      <div className="BlogPost">
+      <div className="BlogPost mh5">
         <h3>
           {frontmatter.author} - {frontmatter.date}
         </h3>
@@ -40,7 +40,7 @@ export const query = graphql`
       }
       frontmatter {
         author
-        date(formatString: "MMMM DD, YYYYY")
+        date(formatString: "MMMM DD, YYYY")
         title
       }
     }
