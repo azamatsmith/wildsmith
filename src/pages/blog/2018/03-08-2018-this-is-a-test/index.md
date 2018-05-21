@@ -1,7 +1,8 @@
 ---
 author: Matt Smith
-tags: javascript, building
 date: 2018-03-08
+image: running_picture.jpg
+tags: javascript, building
 test: another
 title: something
 ---

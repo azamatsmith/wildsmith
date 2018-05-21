@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'components';
+import {BlogPostItem, Link} from 'components';
 
 export default class Blog extends React.Component {
   static propTypes = {};
@@ -20,18 +20,14 @@ export default class Blog extends React.Component {
     this.props.data.allMarkdownRemark.edges.map(({node}) => {
       const {excerpt, fields, frontmatter} = node;
       return (
-        <Link className="pv2" to={fields.slug} key={fields.slug}>
-          <div className="near-black f4">
-            {frontmatter.title}-{frontmatter.author}-{frontmatter.date}
-          </div>
-          <div className="flex">{this._renderTags(fields.tags)}</div>
-          <div className="mv3 pa3 br2 near-black bg-light-gray">{excerpt}</div>
-        </Link>
+        <BlogPostItem
+          key={`${node.frontmatter.date}-${node.frontmatter.title}`}
+          {...node}
+        />
       );
     });
 
   render() {
-    console.log('blog index', this.props);
     return (
       <div className="Blog flex">
         <div className="w-30" />
@@ -54,8 +50,16 @@ export const query = graphql`
           frontmatter {
             author
             date(formatString: "MMMM DD, YYYY")
+            image {
+              childImageSharp {
+                sizes(maxWidth: 786) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
             title
           }
+          timeToRead
         }
       }
     }

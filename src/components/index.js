@@ -1,9 +1,9 @@
 export {default as Button} from './Button';
+export {default as BlogPostItem} from './BlogPostItem';
 export {default as Email} from './Email';
 export {default as Footer} from './Footer';
 export {default as Header} from './Header';
 export {default as Icon} from './Icon';
-export {default as Instafeed} from './Instafeed';
 export {default as Input} from './Input';
 export {default as Link} from './Link';
 export {default as Navbar} from './Navbar';

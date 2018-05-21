@@ -12,8 +12,13 @@ export default class NewInstafeed extends React.Component {
   // PRIVATE
 
   _renderImages = () =>
-    this.props.data.allFile.edges.map(({ node }) => (
-      <a href={node.fields.link} target="_blank" rel="noopener noreferrer">
+    this.props.data.allFile.edges.map(({node}) => (
+      <a
+        href={node.fields.link}
+        key={node.fields.link}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <Img
           className=""
           outerWrapperClassName="ma3 pointer"
@@ -24,7 +29,6 @@ export default class NewInstafeed extends React.Component {
     ));
 
   render() {
-    console.log('newInstafeed props', this.props);
     return (
       <div className="flex flex-wrap mh5 justify-center">
         {this._renderImages()}
@@ -35,7 +39,7 @@ export default class NewInstafeed extends React.Component {
 
 export const instagramImagesFragment = graphql`
   fragment InstagramImages on RootQueryType {
-    allFile(filter: { fields: { InstagramImage: { eq: "true" } } }) {
+    allFile(filter: {fields: {InstagramImage: {eq: "true"}}}) {
       edges {
         node {
           fields {

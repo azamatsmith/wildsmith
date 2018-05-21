@@ -1,8 +1,8 @@
 ---
-image: test-image.jpg
-title: Using GraphQL query fragments with Gatsby
 author: Matthew Smith
 date: 2018-03-18
+image: test-image.jpg
+title: Using GraphQL query fragments with Gatsby
 tags: gatsby graphql
 published: false
 ---

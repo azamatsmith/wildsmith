@@ -1,8 +1,8 @@
 ---
-image: test-image.jpg
-title: Using remote resources with Gatsby
 author: Matthew Smith
-date: 03-14-2018
+date: 2018-03-19
+image: test-image2.jpg
+title: Using remote resources with Gatsby
 tags: gatsby graphql
 published: false
 ---
