@@ -32,6 +32,7 @@
     "node-fetch": "^2.0.0",
     "npm": "^5.7.1",
     "prismjs": "^1.12.2",
+    "react-gravatar": "^2.6.3",
     "react-helmet": "^5.2.0",
     "react-recaptcha": "^2.3.6",
     "tachyons-sass": "^4.9.2"
