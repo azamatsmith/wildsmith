@@ -21,21 +21,40 @@ export default class BlogPostItem extends React.Component {
     timeToRead: PropTypes.number,
   };
 
+  state = {hovered: false};
+
   render() {
     const {fields, frontmatter, timeToRead} = this.props;
+    const {hovered} = this.state;
+    const imageWrapperStyle = {
+      // transform: `scale(${hovered ? '1.05' : '1'})`,
+      // transition: 'transform 250ms ease-out',
+    };
     return (
-      <div className="BlogPostItem pa3 mv3 shadow-1 ba br2 b--light-gray">
-        <div className="flex flex-column">
-          <P>{frontmatter.author}</P>
-          <P>
-            {frontmatter.date} · {timeToRead} min
-          </P>
+      <GatsbyLink
+        className="BlogPostItem flex pa3 mv3 ba br2 b--light-gray pointer no-underline translate-y-2"
+        onMouseEnter={() => this.setState({hovered: true})}
+        onMouseLeave={() => this.setState({hovered: false})}
+        to={fields.slug}
+      >
+        <div className="flex  flex-column w-70 justify-between">
+          <h3 className="mt3 mb0 mid-gray sans-serif mr2">
+            {frontmatter.title}
+          </h3>
+          <div className="sans-serif near-black">
+            <p className="mv1 f4">{frontmatter.author}</p>
+            <p className="mt1 mb0">
+              {frontmatter.date} · {timeToRead} min
+            </p>
+          </div>
         </div>
-        <GatsbyLink className="pointer no-underline" to={fields.slug}>
+        <div
+          className="w-30 flex flex-column justify-center"
+          style={imageWrapperStyle}
+        >
           <GatsbyImage sizes={frontmatter.image.childImageSharp.sizes} />
-          <h3 className="mt3 mb0 mid-gray sans-serif">{frontmatter.title}</h3>
-        </GatsbyLink>
-      </div>
+        </div>
+      </GatsbyLink>
     );
   }
 }

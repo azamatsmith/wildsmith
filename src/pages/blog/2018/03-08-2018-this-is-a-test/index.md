@@ -2,9 +2,9 @@
 author: Matt Smith
 date: 2018-03-08
 image: running_picture.jpg
+subTitle: “When you change the way you look at things, the things you look at change.” — Dr. Wayne Dyer 
 tags: javascript, building
-test: another
-title: something
+title: This iPhone Feature Can Radically Improve Your Life And Relationships
 ---
 
 ### This is a test
