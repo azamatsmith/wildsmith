@@ -7,12 +7,17 @@
 }
 
 .link-1.active ~ hr {
-  margin-left: calc(33% + 20px);
+  margin-left: calc(25% + 20px);
   max-width: 20%;
 }
 
 .link-2.active ~ hr {
-  margin-left: calc(66% + 20px);
+  margin-left: calc(50% + 20px);
+  max-width: 20%;
+}
+
+.link-3.active ~ hr {
+  margin-left: calc(75% + 20px);
   max-width: 20%;
 }
 
@@ -34,12 +39,17 @@
   }
 
   .link-1.active ~ hr {
-    margin-left: calc(33% + 2px);
+    margin-left: calc(25% + 2px);
     max-width: 17%;
   }
 
   .link-2.active ~ hr {
-    margin-left: calc(66% + 2px);
+    margin-left: calc(50% + 2px);
     max-width: 11%;
+  }
+
+  .link-3.active ~ hr {
+    margin-left: calc(75% + 2px);
+    max-width: 8%;
   }
 }
