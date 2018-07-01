@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
+import {Container} from 'components';
 import 'prismjs/themes/prism-solarizedlight.css';
 import types from './types';
 
@@ -17,7 +18,7 @@ export default class BlogPost extends React.Component {
     const {fields, frontmatter, html} = this.props.data.markdownRemark;
 
     return (
-      <div className="BlogPost mh5">
+      <Container className="BlogPost">
         <h3>
           {frontmatter.author} - {frontmatter.date}
         </h3>
@@ -30,7 +31,7 @@ export default class BlogPost extends React.Component {
           ))}
         </p>
         <div dangerouslySetInnerHTML={{__html: html}} />
-      </div>
+      </Container>
     );
   }
 }
