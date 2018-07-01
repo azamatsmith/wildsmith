@@ -6,23 +6,18 @@ export default class Container extends React.Component {
     children: PropTypes.any,
     className: PropTypes.string,
     type: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
     children: null,
     className: '',
     type: 'div',
-  }
+  };
 
   render() {
-    const { children, className,  type, ...rest } = this.props;
-    const thisClass = `Container mw5 mw7-ns center pa3 ph5-ns ${className}`;
-    return (
-      React.createElement(
-        type,
-        [...rest, className: thisClass],
-        [...children]
-      )
-    );
+    const {children, className, type, ...rest} = this.props;
+    const thisClass = `Container mw7-ns center pa3 ph5-ns ${className}`;
+    const theseProps = {...rest, className: thisClass};
+    return React.createElement(type, ...theseProps, children);
   }
 }

@@ -1,0 +1,9 @@
+@import '~styles/main';
+
+.BlogPost-body {
+  @extend .system-font, .lh-copy, .f4;
+}
+
+.BlogPost-body .gatsby-highlight {
+  @extend .f5;
+}

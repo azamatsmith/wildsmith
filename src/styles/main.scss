@@ -6,6 +6,10 @@
   font-family: Butler;
 }
 
+.system-font {
+  font-family: $system-font;
+}
+
 // Overwrite link:focus -- no outline
 .link:focus {
   outline: none;
