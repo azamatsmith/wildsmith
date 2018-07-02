@@ -17,6 +17,13 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-images',
           'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow',
+            },
+          },
         ],
       },
     },

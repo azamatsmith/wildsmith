@@ -7,3 +7,7 @@
 .BlogPost-body .gatsby-highlight {
   @extend .f5;
 }
+
+.BlogPost-body a {
+  @extend .ws-link;
+}

@@ -11,22 +11,26 @@ export default class NewInstafeed extends React.Component {
 
   // PRIVATE
 
-  _renderImages = () =>
-    this.props.data.allFile.edges.map(({node}) => (
-      <a
-        href={node.fields.link}
-        key={node.fields.link}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <Img
-          className=""
-          outerWrapperClassName="ma3 pointer"
-          onClick={() => console.log('clicked')}
-          resolutions={node.childImageSharp.resolutions}
-        />
-      </a>
-    ));
+  _renderImages = () => {
+    // error checking for images
+    const images = this.props.data.allFile.edges.map(({node}) => ({...node}));
+    return images.filter(image => image.childImageSharp).map(image => {
+      return (
+        <a
+          href={image.fields.link}
+          key={image.fields.link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Img
+            className=""
+            outerWrapperClassName="ma3 pointer"
+            resolutions={image.childImageSharp.resolutions}
+          />
+        </a>
+      );
+    });
+  };
 
   render() {
     return (

@@ -55,14 +55,14 @@ export default class BlogPostItem extends React.Component {
           </h3>
           {frontmatter.subTitle && this._renderSubtitle(frontmatter.subTitle)}
           <div className="sans-serif near-black">
-            <p className="flex items-center mv1 f4">
+            <div className="flex items-center mv1 f4">
               <Gravatar
                 author={frontmatter.author}
                 className="mr1 mt1"
                 size={20}
               />
-              {frontmatter.author}
-            </p>
+              <span>{frontmatter.author}</span>
+            </div>
             <p className="mt1 mb0">
               {frontmatter.date} · {timeToRead} min
             </p>
