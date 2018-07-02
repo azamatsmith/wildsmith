@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
-import {Container} from 'components';
+import {AuthorProfile, Container} from 'components';
 import 'prismjs/themes/prism-solarizedlight.css';
 import types from './types';
 import './BlogPost.scss';
@@ -13,11 +13,7 @@ export default class BlogPost extends React.Component {
 
   static defaultProps = {};
 
-  _renderImage = image => (
-    <div className="mw7 center">
-      <GatsbyImage sizes={image.childImageSharp.sizes} />
-    </div>
-  );
+  _renderImage = image => <GatsbyImage sizes={image.childImageSharp.sizes} />;
 
   _renderTags = tags =>
     tags.map(tag => (
@@ -27,18 +23,31 @@ export default class BlogPost extends React.Component {
     ));
 
   render() {
-    const {fields, frontmatter, html} = this.props.data.markdownRemark;
-    const {tags} = fields;
+    const {
+      fields,
+      frontmatter,
+      html,
+      timeToRead,
+    } = this.props.data.markdownRemark;
+    // const {tags} = fields;
+    // <p>{tags.length && this._renderTags(tags)}</p>
 
     return (
-      <div className="BlogPost pt5">
-        {frontmatter.image && this._renderImage(frontmatter.image)}
+      <div className="BlogPost pt5 sans-serif">
+        <div className="mw7 center">
+          <AuthorProfile
+            author={frontmatter.author}
+            date={frontmatter.date}
+            timeToRead={timeToRead}
+          />
+          <h1 className={`${frontmatter.subTitle ? 'mb2' : 'mb4'}`}>
+            {frontmatter.title}
+          </h1>
+          {frontmatter.subTitle && <h2>{frontmatter.subTitle}</h2>}
+          {frontmatter.image && this._renderImage(frontmatter.image)}
+        </div>
 
         <Container className="flex flex-column w-100 ma0">
-          <h3>
-            {frontmatter.author} - {frontmatter.date}
-          </h3>
-          <p>{tags.length && this._renderTags(tags)}</p>
           <div
             className="BlogPost-body"
             dangerouslySetInnerHTML={{__html: html}}
@@ -53,6 +62,7 @@ export const query = graphql`
   query BlogPostTemplate($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
+      timeToRead
       fields {
         tags
       }

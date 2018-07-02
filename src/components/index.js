@@ -1,3 +1,4 @@
+export {default as AuthorProfile} from './AuthorProfile';
 export {default as Button} from './Button';
 export {default as BlogPostItem} from './BlogPostItem';
 export {default as Container} from './Container';
