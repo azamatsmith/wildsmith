@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {BlogPostItem, Link} from 'components';
+// import PropTypes from 'prop-types';
+import {BlogPostItem} from 'components';
 
 export default class Blog extends React.Component {
   static propTypes = {};
