@@ -59,3 +59,8 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+.inline-code {
+  color: #657b83;
+  @extend .bg-light-yellow, .ph1, .f5, .br1, .code;
+}

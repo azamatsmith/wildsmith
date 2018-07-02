@@ -13,7 +13,7 @@ Gatsby works great with [Contentful](https://www.gatsbyjs.org/packages/gatsby-so
 
 That is the problem that I had, so I'm going to show you how to solve it. We're going to start off by writing a Gatsby Plugin that fetches data from an API. For this example we are going to be fetching a random list of [jokes](https://github.com/15Dkatz/official_joke_api).
 
-### Step 1 - Create the plugin
+### Create the plugin
 
 Let's start off by creating a `plugins` directory if you do not already have one. Inside of the plugins directory we'll create another directory that matches the name of our plugin. Well call it `random-jokes`.
 
@@ -21,9 +21,9 @@ We're going to create 2 files inside of the `random-jokes` plugin directory: `pa
 
 The purpose of the `package.json` file is to tell Gatsby the name of the plugin. We'll be adding this to the `gatsby-config.js` file shortly.
 
-`package.json`
-
 ```js
+// package.json
+
 {"name": "random-jokes"}
 ```
 
@@ -37,9 +37,9 @@ yarn add axios
 npm install --save axios
 ```
 
-`gatsby-node.js`
-
 ```js
+// plugins/random-jokes/gatsby-node.js
+
 const axios = require('axios');
 const crypto = require('crypto');
 
@@ -68,11 +68,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 };
 ```
 
-### Step 2 - Tell Gatsby to use the plugin
+### Tell Gatsby to use the plugin
 
 We need let Gatsby know that we would like to use this plugin. To do so, we need to modify the `gatsby-config` file like so:
 
 ```js
+// gatsby-config.js
+
 module.exports = {
   ...
 
@@ -83,9 +85,9 @@ module.exports = {
 }
 ```
 
-### Step 3 - Find the newly created node in GraphiQL
+### Find the newly created node in GraphiQL
 
-Restart Gatsby and it will create our new `Joke` nodes. Before trying to query in Gatsby, it is always a good idea to first explore your data with the GraphiQL interface. It should be running on `http://localhost:8000/___graphql`.
+Restart Gatsby and it will create our new `Joke` nodes. Before trying to query in Gatsby, it is always a good idea to first explore your data with the GraphiQL interface. It should be running on [http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql).
 
 On the upper right hand side of the GraphiQL interface click `< Docs` and scroll down until you see the `joke` node as pictured below.
 
@@ -107,11 +109,13 @@ Let's write a query in the left hand pane to view our results.
 }
 ```
 
-### Step 4 - Create a new page in Gatsby
+### Create a new page in Gatsby
 
 Now that we have verified that all of the data is showing up as expected we can create a page and add our query to our page components. Lets create the file `/src/pages/jokes.js`.
 
 ```js
+// src/pages/jokes.js
+
 import React from 'react';
 
 export default class Jokes extends React.Component {
@@ -147,4 +151,4 @@ export const query = graphql`
 `;
 ```
 
-This post is an example of how you can use your external APIs as Gatsby data sources. Coming soon in another post on how to retrieve external images during build time so that you may use them with `Gatsby Image`.
+This post is an example of how you can use your external APIs as Gatsby data sources. Coming soon is another post on how to retrieve external images during build time so that you may use them with `Gatsby Image`.

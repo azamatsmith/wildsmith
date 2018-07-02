@@ -14,7 +14,7 @@ export default class Link extends React.Component {
   render() {
     const {children, className, ...rest} = this.props;
     return (
-      <GatsbyLink className={`link pink dim ${className}`} {...rest}>
+      <GatsbyLink className={`ws-link ${className}`} {...rest}>
         {children}
       </GatsbyLink>
     );

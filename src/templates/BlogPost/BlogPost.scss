@@ -8,6 +8,34 @@
   @extend .f5;
 }
 
-.BlogPost-body a {
+.BlogPost-body p > a {
   @extend .ws-link;
+}
+
+.BlogPost-body p > code {
+  @extend .inline-code;
+}
+
+.BlogPost-body > blockquote {
+  @extend .bl,
+    .b--near-black,
+    .bw2,
+    .br1,
+    .mh0,
+    .pv3,
+    .bg-light-gray,
+    .mv3,
+    .i,
+    .fw3;
+  p {
+    @extend .ml4;
+  }
+}
+
+.BlogPost-body > p {
+  @extend .mv4;
+}
+
+.BlogPost .filename {
+  @extend .mb0;
 }

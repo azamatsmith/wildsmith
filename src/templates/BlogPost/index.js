@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
+import Disqus from 'disqus-react';
 import {AuthorProfile, Container} from 'components';
 import 'prismjs/themes/prism-solarizedlight.css';
 import types from './types';
@@ -22,7 +23,17 @@ export default class BlogPost extends React.Component {
       </span>
     ));
 
+  _disqusConfig = () => {
+    const {fields, frontmatter} = this.props.data.markdownRemark;
+    return {
+      url: '',
+      identifier: fields.slug,
+      title: frontmatter.title,
+    };
+  };
+
   render() {
+    console.log(this.props);
     const {
       fields,
       frontmatter,
@@ -49,8 +60,13 @@ export default class BlogPost extends React.Component {
 
         <Container className="flex flex-column w-100 ma0">
           <div
-            className="BlogPost-body"
+            className="BlogPost-body mb4"
             dangerouslySetInnerHTML={{__html: html}}
+          />
+
+          <Disqus.DiscussionEmbed
+            shortname={'wildsmithstudio'}
+            config={this._disqusConfig()}
           />
         </Container>
       </div>
@@ -64,6 +80,7 @@ export const query = graphql`
       html
       timeToRead
       fields {
+        slug
         tags
       }
       frontmatter {
