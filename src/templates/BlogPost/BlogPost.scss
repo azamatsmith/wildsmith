@@ -1,7 +1,7 @@
 @import '~styles/main';
 
 .BlogPost-body {
-  @extend .system-font, .lh-copy, .f4;
+  @extend .system-font, .lh-copy, .f4, .near-black;
 }
 
 .BlogPost-body .gatsby-highlight {
@@ -10,6 +10,10 @@
 
 .BlogPost-body p > a {
   @extend .ws-link;
+}
+
+.BlogPost-body > h3 {
+  @extend .mt5;
 }
 
 .BlogPost-body p > code {
@@ -23,7 +27,7 @@
     .br1,
     .mh0,
     .pv3,
-    .bg-light-gray,
+    .bg-moon-gray,
     .mv3,
     .i,
     .fw3;
