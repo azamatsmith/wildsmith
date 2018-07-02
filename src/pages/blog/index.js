@@ -39,7 +39,7 @@ export default class Blog extends React.Component {
 
 export const query = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
           excerpt
