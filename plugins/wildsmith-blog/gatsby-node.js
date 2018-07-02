@@ -31,7 +31,6 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
         posts.forEach((post, index) => {
-          console.log(post.node.fields.slug);
           createPage({
             path: post.node.fields.slug,
             component: blogPost,

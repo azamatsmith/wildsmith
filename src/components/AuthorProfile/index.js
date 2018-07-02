@@ -7,7 +7,7 @@ export default class AuthorProfile extends React.Component {
   static propTypes = {
     author: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    timeToRead: PropTypes.string.isRequired,
+    timeToRead: PropTypes.number.isRequired,
   };
 
   _getProfile = () => {
