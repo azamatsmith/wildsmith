@@ -20,6 +20,7 @@ export default class Gravatar extends React.Component {
       'matthew smith': 'azamatsmith@gmail.com',
       'matt smith': 'azamatsmith@gmail.com',
       'rachel cope': 'rachelcope@gmail.com',
+      'rachel cope smith': 'rachelcope@gmail.com',
     };
 
     const email = table[this.props.author.toLowerCase()];

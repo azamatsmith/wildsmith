@@ -8,7 +8,7 @@ export default [
   {
     authorAlias: ['Rachel Cope', 'Rachel Cope Smith', 'Rachel Smith'],
     email: 'rachelcope@gmail.com',
-    title: 'UI/UX Designer',
+    title: 'UI/UX/Product Designer',
     role: 'Designer, Co-owner Wildsmith Studio, LLC',
   },
 ];
