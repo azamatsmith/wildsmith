@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGravatar from 'react-gravatar';
+import {personLookup} from 'helpers';
 
 export default class Gravatar extends React.Component {
   static propTypes = {
@@ -15,21 +16,9 @@ export default class Gravatar extends React.Component {
     size: 50,
   };
 
-  _lookup = () => {
-    const table = {
-      'matthew smith': 'azamatsmith@gmail.com',
-      'matt smith': 'azamatsmith@gmail.com',
-      'rachel cope': 'rachelcope@gmail.com',
-      'rachel cope smith': 'rachelcope@gmail.com',
-    };
-
-    const email = table[this.props.author.toLowerCase()];
-    return email;
-  };
-
   render() {
     const {author, className, size, ...rest} = this.props;
-    const email = this._lookup();
+    const {email} = personLookup(author);
 
     if (!email) {
       return null;

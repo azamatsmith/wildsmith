@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
 import Disqus from 'disqus-react';
-import {AuthorProfile, Container} from 'components';
+import {AuthorProfile, Container, SEO} from 'components';
 import 'prismjs/themes/prism-solarizedlight.css';
 import types from './types';
 import './BlogPost.scss';
@@ -68,6 +68,7 @@ export default class BlogPost extends React.Component {
             config={this._disqusConfig()}
           />
         </Container>
+        <SEO isBlogPost={true} {...frontmatter} slug={fields.slug} />
       </div>
     );
   }

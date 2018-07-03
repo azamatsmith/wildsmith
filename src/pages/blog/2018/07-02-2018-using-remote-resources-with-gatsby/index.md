@@ -1,6 +1,7 @@
 ---
 author: Matthew Smith
 date: 2018-07-02
+description: 
 image: remote-resources-gatsby-hero.jpg
 subTitle:  
 title: Using your own remote data sources with Gatsby

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGravatar from 'react-gravatar';
-import authorData from './data';
+import {personLookup} from 'helpers';
 
 export default class AuthorProfile extends React.Component {
   static propTypes = {
@@ -10,20 +10,12 @@ export default class AuthorProfile extends React.Component {
     timeToRead: PropTypes.number.isRequired,
   };
 
-  _getProfile = () => {
-    const {author} = this.props;
-    const [person] = authorData.filter(person => {
-      return person.authorAlias.indexOf(author) >= 0;
-    });
-    return person;
-  };
-
   render() {
     const {author, date, timeToRead} = this.props;
     if (!author) {
       return null;
     }
-    const {email, role, title} = this._getProfile();
+    const {email, role, title} = personLookup(author);
     return (
       <div className="AuthorProfile flex sans-serif near-black mt3 mb4">
         <ReactGravatar className="br-100" email={email} size={80} />
