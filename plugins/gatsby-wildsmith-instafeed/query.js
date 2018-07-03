@@ -1,5 +1,6 @@
 module.exports = `{
   photoList {
+    created_time
     id
     images {
       thumbnail {

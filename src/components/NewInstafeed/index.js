@@ -43,7 +43,10 @@ export default class NewInstafeed extends React.Component {
 
 export const instagramImagesFragment = graphql`
   fragment InstagramImages on RootQueryType {
-    allFile(filter: {fields: {InstagramImage: {eq: "true"}}}) {
+    allFile(
+      filter: {fields: {InstagramImage: {eq: "true"}}}
+      sort: {fields: [fields___created], order: DESC}
+    ) {
       edges {
         node {
           fields {
