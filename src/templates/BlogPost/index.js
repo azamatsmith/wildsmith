@@ -33,7 +33,6 @@ export default class BlogPost extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     const {
       fields,
       frontmatter,
@@ -93,7 +92,6 @@ export const query = graphql`
             }
           }
         }
-        subTitle
         title
       }
     }

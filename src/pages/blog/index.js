@@ -1,9 +1,12 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import {BlogPostItem} from 'components';
+import types from './_types';
 
 export default class Blog extends React.Component {
-  static propTypes = {};
+  static propTypes = {
+    types,
+  };
 
   static defaultProps = {};
 
@@ -17,15 +20,12 @@ export default class Blog extends React.Component {
     ));
 
   _renderPosts = () =>
-    this.props.data.allMarkdownRemark.edges.map(({node}) => {
-      const {excerpt, fields, frontmatter} = node;
-      return (
-        <BlogPostItem
-          key={`${node.frontmatter.date}-${node.frontmatter.title}`}
-          {...node}
-        />
-      );
-    });
+    this.props.data.allMarkdownRemark.edges.map(({node}) => (
+      <BlogPostItem
+        key={`${node.frontmatter.date}-${node.frontmatter.title}`}
+        {...node}
+      />
+    ));
 
   render() {
     return (
@@ -57,7 +57,6 @@ export const query = graphql`
                 }
               }
             }
-            subTitle
             title
           }
           timeToRead

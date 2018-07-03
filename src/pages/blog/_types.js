@@ -9,12 +9,13 @@ export default {
             excerpt: PropTypes.string,
             fields: PropTypes.shape({
               slug: PropTypes.string,
-              tags: PropTypes.arrayOf(PropTypest.string),
+              tags: PropTypes.arrayOf(PropTypes.string),
             }),
             frontmatter: PropTypes.shape({
               author: PropTypes.string,
               date: PropTypes.string,
               title: PropTypes.string,
+              subTitle: PropTypes.string,
             }),
           }),
         })

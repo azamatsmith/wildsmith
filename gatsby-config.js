@@ -3,8 +3,8 @@ module.exports = {
     title: 'Wildsmith Studio site',
   },
   plugins: [
-    'wildsmith-blog',
     'gatsby-wildsmith-instafeed',
+    'wildsmith-blog',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',

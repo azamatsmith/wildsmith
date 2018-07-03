@@ -13,8 +13,8 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
   const queryResult = await client.request(query);
 
   // Have to go old school here since forEach isn't working with async await
-  for (let i = 0; i < queryResult.photoList.length; i++) {
-    const image = queryResult.photoList[i];
+  // for (let i = 0; i < queryResult.photoList.length; i++) {
+  queryResult.photoList.map(async (image, i) => {
     // const imageNode = ImageNode(image);
     // createNode(imageNode);
     console.log(
@@ -43,5 +43,5 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
     } catch (error) {
       console.warn('error creating node', error);
     }
-  }
+  });
 };

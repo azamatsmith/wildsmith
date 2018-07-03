@@ -31,7 +31,7 @@ export default class BlogPostItem extends React.Component {
   state = {hovered: false};
 
   _renderSubtitle = subTitle => (
-    <h4 className="mt1 mb3 sans-serif mr4 f6 gray">{subTitle}</h4>
+    <h4 className="mt0 mb3 sans-serif mr4 f6 gray">{subTitle}</h4>
   );
 
   render() {
@@ -50,7 +50,7 @@ export default class BlogPostItem extends React.Component {
         to={fields.slug}
       >
         <div className="flex  flex-column w-70 justify-between">
-          <h3 className="mt3 mb0 mid-gray sans-serif mr4">
+          <h3 className="mt3 mb0 near-black sans-serif mr4">
             {frontmatter.title}
           </h3>
           {frontmatter.subTitle && this._renderSubtitle(frontmatter.subTitle)}

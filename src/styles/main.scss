@@ -64,3 +64,13 @@
   color: #657b83;
   @extend .bg-light-yellow, .ph1, .f5, .br1, .code;
 }
+
+::selection {
+  background: $dark-pink; /* WebKit/Blink Browsers */
+  color: $near-white;
+}
+
+::-moz-selection {
+  background: $dark-pink; /* Gecko Browsers */
+  color: $near-white;
+}

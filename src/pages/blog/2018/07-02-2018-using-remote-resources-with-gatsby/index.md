@@ -2,6 +2,7 @@
 author: Matthew Smith
 date: 2018-07-02
 image: remote-resources-gatsby-hero.jpg
+subTitle:  
 title: Using your own remote data sources with Gatsby
 tags: gatsby graphql react
 published: false
@@ -13,9 +14,11 @@ Gatsby works great with [Contentful](https://www.gatsbyjs.org/packages/gatsby-so
 
 That is the problem that I had, and I'm going to show you how to solve it.
 
-Hint: It's really easy 🙌.
+Hint: It's really easy 🙌
 
-We're going to start off by writing a Gatsby Plugin that fetches data from an API. For this example we are going to be fetching a random list of [jokes](https://github.com/15Dkatz/official_joke_api) and creating `GraphQL` nodes for them. Then verify them with `GraphiQL`, write a query, and render them in a React component in our Gatsby site.
+We're going to start off by writing a Gatsby Plugin that fetches data from an API. For this example we are going to be fetching a random list of [jokes](https://github.com/15Dkatz/official_joke_api) and creating `GraphQL` nodes for them. Then we'll verify the data with the `GraphiQL` interface, write a query, and render them in a React component in our Gatsby site.
+
+Let's get to it.
 
 ### Create the plugin
 
