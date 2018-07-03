@@ -5,7 +5,7 @@ import types from './_types';
 
 export default class Blog extends React.Component {
   static propTypes = {
-    types,
+    ...types,
   };
 
   static defaultProps = {};

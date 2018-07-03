@@ -26,12 +26,11 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^1.5.56",
     "gatsby-remark-prismjs": "^1.2.17",
+    "gatsby-plugin-sitemap": "^1.2.14",
     "gatsby-source-filesystem": "^1.5.16",
     "gatsby-transformer-remark": "^1.7.36",
-    "gatsby-transformer-sharp": "^1.6.22",
     "graphql-request": "^1.5.1",
     "moment": "^2.21.0",
-    "node-fetch": "^2.0.0",
     "npm": "^5.7.1",
     "prismjs": "^1.12.2",
     "react-gravatar": "^2.6.3",
@@ -48,7 +47,8 @@
     "build": "gatsby build",
     "dev": "rm -rf .cache && gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
+    "format":
+      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
     "test": "jest"
   },
   "devDependencies": {
@@ -60,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^22.1.2",
+    "node-fetch": "^2.0.0",
     "prettier": "^1.10.2"
   }
 }

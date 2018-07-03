@@ -9,6 +9,7 @@ export {default as Header} from './Header';
 export {default as Icon} from './Icon';
 export {default as Input} from './Input';
 export {default as Link} from './Link';
+export {default as Manifest} from './Manifest';
 export {default as Navbar} from './Navbar';
 export {default as NewInstafeed} from './NewInstafeed';
 export {default as P} from './P';
