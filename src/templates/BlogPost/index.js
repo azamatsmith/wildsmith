@@ -34,6 +34,7 @@ export default class BlogPost extends React.Component {
 
   render() {
     const {
+      excerpt,
       fields,
       frontmatter,
       html,
@@ -68,7 +69,12 @@ export default class BlogPost extends React.Component {
             config={this._disqusConfig()}
           />
         </Container>
-        <SEO isBlogPost={true} {...frontmatter} slug={fields.slug} />
+        <SEO
+          excerpt={excerpt}
+          isBlogPost={true}
+          {...frontmatter}
+          slug={fields.slug}
+        />
       </div>
     );
   }
@@ -77,6 +83,7 @@ export default class BlogPost extends React.Component {
 export const query = graphql`
   query BlogPostTemplate($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
+      excerpt
       html
       timeToRead
       fields {
