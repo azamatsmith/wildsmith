@@ -1,9 +1,17 @@
 @import 'variables'; // Must appear before tachyons.scss
 @import '~tachyons-sass/tachyons.scss';
 
+.flex-1 {
+  flex: 1;
+}
+
 // fonts
 .butler {
   font-family: Butler;
+}
+
+.system-font {
+  font-family: $system-font;
 }
 
 // Overwrite link:focus -- no outline
@@ -13,4 +21,60 @@
 
 .karla {
   font-family: Karla;
+}
+
+.translate-y-2 {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease;
+}
+
+.translate-y-2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+// Link style
+.ws-link {
+  color: $dark-pink;
+  position: relative;
+  text-decoration: none;
+}
+
+.ws-link:hover {
+}
+
+.ws-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $dark-pink;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.ws-link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.inline-code {
+  color: #657b83;
+  @extend .bg-light-yellow, .ph1, .f5, .br1, .code;
+}
+
+::selection {
+  background: $dark-pink; /* WebKit/Blink Browsers */
+  color: $near-white;
+}
+
+::-moz-selection {
+  background: $dark-pink; /* Gecko Browsers */
+  color: $near-white;
 }

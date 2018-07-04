@@ -11,17 +11,26 @@ export default class NewInstafeed extends React.Component {
 
   // PRIVATE
 
-  _renderImages = () =>
-    this.props.data.allFile.edges.map(({node}) => (
-      <a href={node.fields.link} target="_blank" rel="noopener noreferrer">
-        <Img
-          className=""
-          outerWrapperClassName="ma3 pointer"
-          onClick={() => console.log('clicked')}
-          resolutions={node.childImageSharp.resolutions}
-        />
-      </a>
-    ));
+  _renderImages = () => {
+    // error checking for images
+    const images = this.props.data.allFile.edges.map(({node}) => ({...node}));
+    return images.filter(image => image.childImageSharp).map(image => {
+      return (
+        <a
+          href={image.fields.link}
+          key={image.fields.link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Img
+            className=""
+            outerWrapperClassName="ma3 pointer"
+            resolutions={image.childImageSharp.resolutions}
+          />
+        </a>
+      );
+    });
+  };
 
   render() {
     return (
@@ -34,7 +43,10 @@ export default class NewInstafeed extends React.Component {
 
 export const instagramImagesFragment = graphql`
   fragment InstagramImages on RootQueryType {
-    allFile(filter: {fields: {InstagramImage: {eq: "true"}}}) {
+    allFile(
+      filter: {fields: {InstagramImage: {eq: "true"}}}
+      sort: {fields: [fields___created], order: DESC}
+    ) {
       edges {
         node {
           fields {

@@ -1,4 +1,3 @@
-// You can delete this file if you're not using it
 exports.modifyWebpackConfig = ({config}) => {
   const newConfig = {...config};
   const loadersArr = ['style', 'css?sourceMap', 'sass', 'sass?sourceMap'];

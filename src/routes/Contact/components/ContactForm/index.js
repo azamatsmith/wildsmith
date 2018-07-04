@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Recaptcha from 'react-recaptcha';
-import { Button, Email, Input } from 'components';
+import {Button, Email, Input} from 'components';
 
 export default class ContactForm extends React.Component {
   static propTypes = {
@@ -22,7 +22,7 @@ export default class ContactForm extends React.Component {
   _handleSubmit = e => {
     e.preventDefault();
 
-    const { loading, ...state } = this.state;
+    const {loading, ...state} = this.state;
 
     if (!this._isValid()) {
       return;
@@ -33,28 +33,28 @@ export default class ContactForm extends React.Component {
         ? 'http://localhost:3746/contact'
         : 'https://wildsmith-instagram.herokuapp.com/contact';
 
-    this.setState({ error: false, loading: true }, () => {
+    this.setState({error: false, loading: true}, () => {
       axios
         .post(URI, state)
-        .then(({ data }) => {
-          this.setState({ loading: false });
+        .then(({data}) => {
+          this.setState({loading: false});
           if (data.success) {
-            return this.setState({ email: '', name: '', message: '' }, () => {
+            return this.setState({email: '', name: '', message: ''}, () => {
               this.props.handleSuccess();
             });
           }
           // error
-          this.setState({ error: true });
+          this.setState({error: true});
         })
         .catch(err => {
-          this.setState({ error: true, loading: false });
+          this.setState({error: true, loading: false});
           console.log('error submitting form', err);
         });
     });
   };
 
   _isValid = () => {
-    const { email, name, message } = this.state;
+    const {email, name, message} = this.state;
     if (email.length && name.length && message.length) {
       return true;
     }
@@ -69,18 +69,18 @@ export default class ContactForm extends React.Component {
   );
 
   render() {
-    const { error, loading } = this.state;
+    const {error, loading} = this.state;
     return (
       <form className="w-100 mh4 w-60-ns" onSubmit={this._handleSubmit}>
         <Input
           label="Your name"
-          onChange={e => this.setState({ name: e.target.value })}
+          onChange={e => this.setState({name: e.target.value})}
           required
           value={this.state.name}
         />
         <Input
           label="Your email address"
-          onChange={e => this.setState({ email: e.target.value })}
+          onChange={e => this.setState({email: e.target.value})}
           type="email"
           required
           value={this.state.email}
@@ -88,7 +88,7 @@ export default class ContactForm extends React.Component {
         <Input
           textarea
           label="Message"
-          onChange={e => this.setState({ message: e.target.value })}
+          onChange={e => this.setState({message: e.target.value})}
           required
           value={this.state.message}
         />
@@ -102,7 +102,6 @@ export default class ContactForm extends React.Component {
           />
 
           {error ? this._renderError() : null}
-
           <Button extraStyles="mv4" loading={loading} type="submit">
             send message
           </Button>

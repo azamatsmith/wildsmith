@@ -6,6 +6,7 @@ module.exports = {
 
   plugins: [
     'gatsby-wildsmith-instafeed',
+    'wildsmith-blog',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
@@ -13,10 +14,34 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-prismjs',
+          'gatsby-remark-images',
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow',
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
         path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/pages/blog`,
       },
     },
     {

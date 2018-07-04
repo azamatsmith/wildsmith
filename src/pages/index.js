@@ -1,7 +1,7 @@
 import React from 'react';
-import {Home} from 'routes';
+import { Home } from 'routes';
 
-export default ({data}) => {
+export default ({ data }) => {
   return <Home data={data} />;
 };
 

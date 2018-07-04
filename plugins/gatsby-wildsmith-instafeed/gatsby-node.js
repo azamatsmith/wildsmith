@@ -2,7 +2,6 @@ const {GraphQLClient} = require('graphql-request');
 const {createRemoteFileNode} = require(`gatsby-source-filesystem`);
 const chalk = require('chalk');
 const query = require('./query');
-// const ImageNode = require('./nodes');
 
 const API_URI = 'https://wildsmith-instagram.herokuapp.com/graphql';
 
@@ -12,11 +11,7 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
   const client = new GraphQLClient(API_URI);
   const queryResult = await client.request(query);
 
-  // Have to go old school here since forEach isn't working with async await
-  for (let i = 0; i < queryResult.photoList.length; i++) {
-    const image = queryResult.photoList[i];
-    // const imageNode = ImageNode(image);
-    // createNode(imageNode);
+  queryResult.photoList.map(async (image, i) => {
     console.log(
       chalk.cyan(
         `\nCreating node for image ${i + 1} of ${queryResult.photoList.length}`
@@ -25,7 +20,7 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
     let fileNode;
     try {
       fileNode = await createRemoteFileNode({
-        url: image.images.standard_resolution.url,
+        url: image.images.standard_resolution.url.split('?')[0],
         cache,
         store,
         createNode,
@@ -40,8 +35,14 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
         name: 'link',
         value: image.link,
       });
+      await createNodeField({
+        node: fileNode,
+        name: 'created',
+        value: image.created_time,
+      });
+      // console.log('filenode', fileNode);
     } catch (error) {
       console.warn('error creating node', error);
     }
-  }
+  });
 };

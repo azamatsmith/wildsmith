@@ -15,12 +15,11 @@ class TemplateWrapper extends Component {
   render() {
     const {children, location} = this.props;
     return (
-      <div className="Template">
+      <div className="Template flex flex-column" style={{minHeight: '100vh'}}>
         <SEO />
         <Manifest />
         <Navbar currentRoute={location.pathname} />
-        <Header />
-        <div>{children()}</div>
+        <div className="flex flex-column flex-1">{children()}</div>
         <Footer />
       </div>
     );
