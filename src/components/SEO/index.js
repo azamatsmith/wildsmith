@@ -60,7 +60,10 @@ export default class SEO extends React.Component {
         />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={imageSrc} />
+        <meta
+          name="twitter:image"
+          content={`https://wildsmithstudio.com/${imageSrc}`}
+        />
 
         <meta
           name="google-site-verification"

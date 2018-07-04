@@ -44,7 +44,7 @@ export default class BlogPost extends React.Component {
 
     return (
       <div className="BlogPost pt5 sans-serif">
-        <div className="mw7 center">
+        <div className="ph3 mw7 center-ns">
           <AuthorProfile
             author={frontmatter.author}
             date={frontmatter.date}
