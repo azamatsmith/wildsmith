@@ -29,9 +29,8 @@ export default class Blog extends React.Component {
 
   render() {
     return (
-      <div className="Blog flex">
-        <div className="w-30" />
-        <div className="w-50 pv5">{this._renderPosts()}</div>
+      <div className="Blog flex justify-center">
+        <div className="pv5">{this._renderPosts()}</div>
       </div>
     );
   }
