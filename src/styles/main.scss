@@ -1,6 +1,10 @@
 @import 'variables'; // Must appear before tachyons.scss
 @import '~tachyons-sass/tachyons.scss';
 
+.flex-1 {
+  flex: 1;
+}
+
 // fonts
 .butler {
   font-family: Butler;

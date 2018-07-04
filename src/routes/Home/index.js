@@ -35,14 +35,16 @@ export default class Home extends Component {
       highlightActive ? 'active' : ''
     }`;
     return (
-      <div className="Home flex flex-column justify-center items-center">
-        <div className="Home-text-wrapper relative mb2 mt2 tc mb0-ns mt6-ns">
-          <TitleText fontWeight="bold">we are wildsmith.</TitleText>
-          <div className={highlightClass} />
+      <div className="Home">
+        <div className="flex flex-column justify-center items-center vh-100">
+          <div className="Home-text-wrapper relative mb2 mt2 tc mb0-ns mt6-ns">
+            <TitleText fontWeight="bold">we are wildsmith.</TitleText>
+            <div className={highlightClass} />
+          </div>
+          <p className="mt-2 mb7 sans-serif near-black">
+            Product Stategy | UX Design | Development
+          </p>
         </div>
-        <p className="mt-2 mb7 sans-serif near-black">
-          Product Stategy | UX Design | Development
-        </p>
         <NewInstafeed data={this.props.data} />
       </div>
     );
