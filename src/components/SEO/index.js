@@ -7,6 +7,7 @@ import config from './config';
 export default class SEO extends React.Component {
   static propTypes = {
     description: PropTypes.string,
+    excerpt: PropTypes.string,
     image: PropTypes.any,
     keywords: PropTypes.string,
     isBlogPost: PropTypes.bool,
@@ -14,6 +15,7 @@ export default class SEO extends React.Component {
 
   static defaultProps = {
     description: null,
+    excerpt: null,
     keywords: null,
     isBlogPost: false,
   };
@@ -22,6 +24,7 @@ export default class SEO extends React.Component {
     const {
       author,
       description,
+      excerpt,
       keywords,
       image,
       isBlogPost,
@@ -35,7 +38,7 @@ export default class SEO extends React.Component {
     // <meta property="fb:app_id" content={config.fbAppID} />
 
     // defaults
-    const thisDescription = description || config.description;
+    const thisDescription = excerpt || config.description;
     const theseKeywords = keywords || config.keywords;
 
     return (
@@ -46,10 +49,14 @@ export default class SEO extends React.Component {
         <meta name="image" content={imageSrc} />
 
         {/* OpenGraph tags */}
+        <meta name="og:site_name" content="Wildsmith Studio" />
         <meta property="og:url" content={url} />
-        {isBlogPost && <meta property="og:type" content="article" />}
+        {isBlogPost && [
+          <meta property="og:type" content="article" />,
+          <meta name="article:author" content={author} />,
+        ]}
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={thisDescription} />
         <meta property="og:image" content={imageSrc} />
 
         {/* Twitter Card tags */}
@@ -59,8 +66,11 @@ export default class SEO extends React.Component {
           content={person ? person.twitterHandle : '@azamatsmith'}
         />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={imageSrc} />
+        <meta name="twitter:description" content={thisDescription} />
+        <meta
+          name="twitter:image"
+          content={`https://wildsmithstudio.com${imageSrc}`}
+        />
 
         <meta
           name="google-site-verification"
