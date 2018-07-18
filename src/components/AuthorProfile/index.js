@@ -25,7 +25,7 @@ export default class AuthorProfile extends React.Component {
             {title} | {role}
           </p>
           <p className="mv0">
-            {date} · {timeToRead} min
+            {date} · {timeToRead} min read
           </p>
         </div>
       </div>

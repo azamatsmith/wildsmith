@@ -74,6 +74,7 @@ export default class BlogPost extends React.Component {
           isBlogPost={true}
           {...frontmatter}
           slug={fields.slug}
+          title={frontmatter.title}
         />
       </div>
     );

@@ -27,10 +27,24 @@ Let's start off by creating a `plugins` directory in the root of the project (if
 
 We're going to create 2 files inside of the `random-jokes` plugin directory: `package.json` and `gatsby-node.js`.
 
+```
+node_modules
+plugins
+  |- random-jokes
+    |- package.json
+    |- gatsby-node.js
+public
+src
+static
+gatsby-node.js
+package.json
+...
+```
+
 The purpose of the `package.json` file is to tell Gatsby the name of the plugin. We'll be adding this to the `gatsby-config.js` file shortly.
 
 ```js
-// package.json
+// random-jokes/package.json
 
 {"name": "random-jokes"}
 ```
@@ -49,8 +63,8 @@ npm install --save axios
 
 In the `gatsby-node.js` file we are going to do 2 things:
 
-1. Send an AJAX request to the external API.
-2. Create a `GraphQL` node for each joke.
+1.  Send an AJAX request to the external API.
+2.  Create a `GraphQL` node for each joke.
 
 ```js
 // plugins/random-jokes/gatsby-node.js

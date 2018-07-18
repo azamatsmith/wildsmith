@@ -11,6 +11,7 @@ export default class SEO extends React.Component {
     image: PropTypes.any,
     keywords: PropTypes.string,
     isBlogPost: PropTypes.bool,
+    title: PropTypes.string,
   };
 
   static defaultProps = {
@@ -18,6 +19,7 @@ export default class SEO extends React.Component {
     excerpt: null,
     keywords: null,
     isBlogPost: false,
+    title: null,
   };
 
   render() {
@@ -43,7 +45,7 @@ export default class SEO extends React.Component {
 
     return (
       <Helmet>
-        <title>Wildsmith Studio</title>
+        <title>{title || 'Wildsmith Studio'}</title>
         {/* General tags */}
         <meta name="description" content={thisDescription} />
         <meta name="image" content={imageSrc} />

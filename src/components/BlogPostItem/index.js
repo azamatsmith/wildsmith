@@ -44,7 +44,7 @@ export default class BlogPostItem extends React.Component {
     };
     return (
       <GatsbyLink
-        className="BlogPostItem bg-near-white flex pa3 mv4 mh3 br2 pointer no-underline translate-y-2"
+        className="BlogPostItem bg-near-white flex pa3 mv4 br2 pointer no-underline translate-y-2"
         onMouseEnter={() => this.setState({hovered: true})}
         onMouseLeave={() => this.setState({hovered: false})}
         to={fields.slug}
@@ -64,7 +64,7 @@ export default class BlogPostItem extends React.Component {
               <span>{frontmatter.author}</span>
             </div>
             <p className="mt1 mb0">
-              {frontmatter.date} · {timeToRead} min
+              {frontmatter.date} · {timeToRead} min read
             </p>
           </div>
         </div>
