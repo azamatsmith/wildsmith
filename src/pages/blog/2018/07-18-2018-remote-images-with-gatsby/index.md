@@ -8,7 +8,7 @@ title: Wrangling remote images with Gatsby
 tags: gatsby graphql react
 ---
 
-Want to add your Instagram feed to your site? Lazy load remote images with `gatsby-image`? Write your first Gatsby plugin? Then you're in the right place.
+Want to add your Instagram feed to your site? Lazy load remote images with gatsby-image? Write your first Gatsby plugin? Then you're in the right place.
 
 In this post we're going to go through the steps to add images to your Gatsby site from your Instagram feed at build time by creating a plugin.
 
