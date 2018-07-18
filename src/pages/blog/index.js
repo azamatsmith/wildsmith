@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import {BlogPostItem} from 'components';
+import {BlogHero, BlogPostItem} from 'components';
 import types from './_types';
 
 export default class Blog extends React.Component {
@@ -19,18 +19,22 @@ export default class Blog extends React.Component {
       </div>
     ));
 
-  _renderPosts = () =>
-    this.props.data.allMarkdownRemark.edges.map(({node}) => (
-      <BlogPostItem
-        key={`${node.frontmatter.date}-${node.frontmatter.title}`}
-        {...node}
-      />
-    ));
+  _renderPosts = () => {
+    const posts = this.props.data.allMarkdownRemark.edges;
+    return posts.map(
+      ({node}, i) =>
+        i === 0 ? (
+          <BlogHero key={node.id} {...node} />
+        ) : (
+          <BlogPostItem key={node.id} {...node} />
+        )
+    );
+  };
 
   render() {
     return (
-      <div className="Blog flex justify-center">
-        <div className="pv5">{this._renderPosts()}</div>
+      <div className="Blog flex flex-column items-center">
+        <div className="mt5 mb4">{this._renderPosts()}</div>
       </div>
     );
   }
@@ -41,6 +45,7 @@ export const query = graphql`
     allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
+          id
           excerpt
           fields {
             slug

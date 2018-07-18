@@ -5,7 +5,8 @@ module.exports = {
   },
 
   plugins: [
-    'gatsby-wildsmith-instafeed',
+    'my-instagram-plugin',
+    // 'gatsby-wildsmith-instafeed',
     'wildsmith-blog',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',

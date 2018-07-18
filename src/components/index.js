@@ -1,5 +1,6 @@
 export {default as AuthorProfile} from './AuthorProfile';
 export {default as Button} from './Button';
+export {default as BlogHero} from './BlogHero';
 export {default as BlogPostItem} from './BlogPostItem';
 export {default as Container} from './Container';
 export {default as Email} from './Email';

@@ -43,3 +43,7 @@
 .BlogPost .filename {
   @extend .mb0;
 }
+
+.BlogPost-body > p > img {
+  @extend .w-100;
+}
