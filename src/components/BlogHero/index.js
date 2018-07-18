@@ -14,7 +14,6 @@ export default class BlogHero extends React.Component {
   static defaultProps = {};
 
   render() {
-    console.log(this.props);
     const {excerpt, fields, frontmatter, timeToRead} = this.props;
     const {date, image, title} = frontmatter;
     return (
@@ -38,7 +37,7 @@ export default class BlogHero extends React.Component {
             />
             <span className="ml2">{frontmatter.author}</span>
             <span className="ml3">
-              {date} · {timeToRead} min{timeToRead === 1 ? '' : 's'}
+              {date} · {timeToRead} min read
             </span>
           </div>
         </div>

@@ -64,7 +64,7 @@ export default class BlogPostItem extends React.Component {
               <span>{frontmatter.author}</span>
             </div>
             <p className="mt1 mb0">
-              {frontmatter.date} · {timeToRead} min{timeToRead === 1 ? '' : 's'}
+              {frontmatter.date} · {timeToRead} min read
             </p>
           </div>
         </div>
