@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.8",
+    "@storybook/addon-options": "^3.4.8",
     "@storybook/react": "^3.4.8",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.19.1",
