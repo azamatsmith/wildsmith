@@ -7,5 +7,10 @@ module.exports = (baseConfig, env) => {
     loaders: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
+  baseConfig.module.rules.push({
+    test: /\.svg$/,
+    loaders: ['svg-inline-loader'],
+    // include: path.resolve(__dirname, '../'),
+  });
   return baseConfig;
 };
