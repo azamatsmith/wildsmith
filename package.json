@@ -48,10 +48,13 @@
     "build": "gatsby build",
     "dev": "rm -rf .cache && gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
+    "format":
+      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.8",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.19.1",
     "eslint-config-react-app": "^2.1.0",

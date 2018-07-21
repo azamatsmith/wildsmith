@@ -34,7 +34,7 @@ export default class Blog extends React.Component {
   render() {
     return (
       <div className="Blog flex flex-column items-center">
-        <div className="mt5 mb4">{this._renderPosts()}</div>
+        <div className="mt5 mb4 mh3 mh0-ns">{this._renderPosts()}</div>
       </div>
     );
   }
