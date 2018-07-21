@@ -9,7 +9,7 @@ module.exports = (baseConfig, env) => {
   });
   baseConfig.module.rules.push({
     test: /\.svg$/,
-    loaders: ['svg-inline-loader'],
+    loaders: ['svg-url-loader'],
     // include: path.resolve(__dirname, '../'),
   });
   return baseConfig;

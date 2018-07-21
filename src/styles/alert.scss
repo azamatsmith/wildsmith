@@ -1,0 +1,18 @@
+.Alert {
+  @extend .pv3, .ph2, .bl, .bw2, .br1;
+}
+
+.Alert-warning {
+  border-left-color: #ffeb3b;
+  background-image: linear-gradient(-90deg, #fffef7 0%, #fff8bb 100%);
+}
+
+.Alert-info {
+  border-left-color: #2f91f6;
+  background-image: linear-gradient(-90deg, #d7ebff 0%, #2f91f6 100%);
+}
+
+.Alert-success {
+  border-left-color: #90f850;
+  background-image: linear-gradient(-90deg, #e2fcd3 0%, #90f850 100%);
+}

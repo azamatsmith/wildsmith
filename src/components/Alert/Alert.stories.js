@@ -1,7 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {checkA11y} from '@storybook/addon-a11y';
-import Alert from '../';
+import Alert from '../Alert';
 
 storiesOf('Alert', module)
   // .addDecorator(story => <Container>{story()}</Container>)

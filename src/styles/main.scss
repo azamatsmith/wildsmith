@@ -1,5 +1,6 @@
 @import 'variables'; // Must appear before tachyons.scss
 @import '~tachyons-sass/tachyons.scss';
+@import 'alert';
 
 .flex-1 {
   flex: 1;
