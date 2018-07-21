@@ -15,5 +15,6 @@ export {default as Navbar} from './Navbar';
 export {default as NewInstafeed} from './NewInstafeed';
 export {default as P} from './P';
 export {default as SEO} from './SEO';
+export {default as Tag} from './Tag';
 export {default as TitleText} from './TitleText';
 export {default as UnderlineText} from './UnderlineText';
