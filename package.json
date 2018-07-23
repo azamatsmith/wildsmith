@@ -50,7 +50,8 @@
     "build": "gatsby build",
     "dev": "rm -rf .cache && gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
+    "format":
+      "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "test": "jest"
@@ -61,7 +62,6 @@
     "@storybook/react": "^3.4.8",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-eslint": "^7.2.3",
-    "babel-loader": "7.1.1",
     "eslint": "^4.19.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-flowtype": "^2.49.3",
