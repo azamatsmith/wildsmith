@@ -1,16 +1,17 @@
 const path = require('path');
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
+// const defaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
-module.exports = (baseConfig, env) => {
-  baseConfig.module.rules.push({
+module.exports = (baseConfig, env, defaultConfig) => {
+  console.log(defaultConfig);
+  defaultConfig.module.rules.push({
     test: /\.scss$/,
     loaders: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
-  baseConfig.module.rules.push({
+  defaultConfig.module.rules.push({
     test: /\.svg$/,
     loaders: ['svg-inline-loader'],
     // include: path.resolve(__dirname, '../'),
   });
-  return baseConfig;
+  return defaultConfig;
 };
