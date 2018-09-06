@@ -3,9 +3,6 @@
 node_modules
 .cache/
 
-# Since we are using yarn, don't checkin package-lock
-package-lock.json
-
 # Build directory
 public/
 .DS_Store
