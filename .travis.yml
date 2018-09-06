@@ -11,7 +11,7 @@ cache:
 #   - npm install -g codecov
 
 script:
-  - yarn test -- --coverage
+  - npm test -- --coverage
 
 # after_success:
   # - codecov --token=5698eb11-48c7-4409-b11e-53d0f07a03a5
