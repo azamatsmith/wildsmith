@@ -1,9 +1,9 @@
 ---
 author: Matthew Smith
 date: 2018-07-02
-description: 
+? description
 image: remote-resources-gatsby-hero.jpg
-subTitle:  
+? subTitle
 title: Using your own remote data sources with Gatsby
 tags: gatsby graphql react
 published: false
@@ -186,4 +186,6 @@ export const query = graphql`
 
 And that's all there is to it.
 
-This post is an example of how you can use your external APIs as Gatsby data sources. Want to take this concept to the next level? I've written another [post](/blog/remote-images-with-gatsby) on how to retrieve external images during build time so that you may use them with `gatsby-image`. You'll learn how to do this by creating an Instagram plugin for you Gatsby site 🚀
+Ready to take this concept to the next level?
+
+I've written another [post](/blog/remote-images-with-gatsby) on how to retrieve external images during build time so that you may use them with `gatsby-image`. You'll learn how to do this by creating an Instagram plugin for you Gatsby site 🚀
