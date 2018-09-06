@@ -42,6 +42,7 @@ export default class BlogPost extends React.Component {
     } = this.props.data.markdownRemark;
     // const {tags} = fields;
     // <p>{tags.length && this._renderTags(tags)}</p>
+    console.log(this.props);
 
     return (
       <div className="BlogPost pt5 sans-serif">
