@@ -45,6 +45,7 @@ export default class SEO extends React.Component {
 
     return (
       <Helmet>
+        <html lang="en" />
         <title>{title || 'Wildsmith Studio'}</title>
         {/* General tags */}
         <meta name="description" content={thisDescription} />
