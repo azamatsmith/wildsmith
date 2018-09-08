@@ -11,7 +11,8 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
   const client = new GraphQLClient(API_URI);
   const queryResult = await client.request(query);
 
-  queryResult.photoList.map(async (image, i) => {
+  for (let i = 0; i < queryResult.photoList.length; i++) {
+    const image = queryResult.photoList[i];
     console.log(
       chalk.cyan(
         `\nCreating node for image ${i + 1} of ${queryResult.photoList.length}`
@@ -40,9 +41,10 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
         name: 'created',
         value: image.created_time,
       });
-      // console.log('filenode', fileNode);
+      console.log('filenode', i + 1, ' created');
     } catch (error) {
       console.warn('error creating node', error);
     }
-  });
+  }
+  console.log('done creating nodes');
 };

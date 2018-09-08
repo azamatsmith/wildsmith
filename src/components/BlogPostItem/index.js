@@ -22,7 +22,7 @@ export default class BlogPostItem extends React.Component {
     timeToRead: PropTypes.number,
   };
 
-  defaultProps = {
+  static defaultProps = {
     frontmatter: {
       subTitle: null,
     },

@@ -41,10 +41,11 @@ export default class SEO extends React.Component {
 
     // defaults
     const thisDescription = excerpt || config.description;
-    const theseKeywords = keywords || config.keywords;
+    // const theseKeywords = keywords || config.keywords;
 
     return (
       <Helmet>
+        <html lang="en" />
         <title>{title || 'Wildsmith Studio'}</title>
         {/* General tags */}
         <meta name="description" content={thisDescription} />
@@ -53,10 +54,8 @@ export default class SEO extends React.Component {
         {/* OpenGraph tags */}
         <meta name="og:site_name" content="Wildsmith Studio" />
         <meta property="og:url" content={url} />
-        {isBlogPost && [
-          <meta property="og:type" content="article" />,
-          <meta name="article:author" content={author} />,
-        ]}
+        {isBlogPost && <meta property="og:type" content="article" />}
+        {isBlogPost && <meta name="article:author" content={author} />}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={thisDescription} />
         <meta property="og:image" content={imageSrc} />
