@@ -60,7 +60,8 @@ export default class BlogPost extends React.Component {
             {frontmatter.image && this._renderImage(frontmatter.image)}
           </div>
 
-          <Container className="flex flex-column w-100 ma0">
+          {/* <!-- convert to Container --> */}
+          <div className="mw7-ns center pa3 ph5-ns flex flex-column w-100 ma0">
             <div
               className="BlogPost-body mb4"
               dangerouslySetInnerHTML={{__html: html}}
@@ -70,7 +71,7 @@ export default class BlogPost extends React.Component {
               shortname={'wildsmithstudio'}
               config={this._disqusConfig()}
             />
-          </Container>
+          </div>
           <SEO
             excerpt={excerpt}
             isBlogPost={true}

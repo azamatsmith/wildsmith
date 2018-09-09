@@ -9,7 +9,7 @@ export default class SelectWork extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <div>select work</div>
       </Layout>
     );

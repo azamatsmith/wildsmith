@@ -12,6 +12,12 @@ class Layout extends Component {
     }),
   };
 
+  static defaultProps = {
+    location: {
+      pathname: '',
+    },
+  };
+
   render() {
     const {children, location} = this.props;
     return (
