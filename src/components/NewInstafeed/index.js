@@ -26,7 +26,7 @@ export default class NewInstafeed extends React.Component {
           <Img
             className=""
             outerWrapperClassName="ma3 pointer"
-            resolutions={image.childImageSharp.resolutions}
+            fixed={image.childImageSharp.fixed}
           />
         </a>
       );
@@ -34,11 +34,6 @@ export default class NewInstafeed extends React.Component {
   };
 
   render() {
-    //TODO: Remove this check
-    if (!this.props.data.allFile) {
-      console.log('cannot load instafeed');
-      return null;
-    }
     return (
       <div className="flex flex-wrap mh5 justify-center">
         {this._renderImages()}
@@ -59,8 +54,8 @@ export const instagramImagesFragment = graphql`
             link
           }
           childImageSharp {
-            resolutions(height: 450) {
-              ...GatsbyImageSharpResolutions
+            fixed(height: 450, width: 400) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
