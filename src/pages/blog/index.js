@@ -1,5 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import {BlogHero, BlogPostItem} from 'components';
 import types from './_types';
 

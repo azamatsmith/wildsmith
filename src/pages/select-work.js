@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Layout} from 'components';
 import PropTypes from 'prop-types';
 
 export default class SelectWork extends Component {
@@ -6,9 +7,11 @@ export default class SelectWork extends Component {
 
   static defaultProps = {};
 
-  state = {};
-
   render() {
-    return <div>select work</div>;
+    return (
+      <Layout>
+        <div>select work</div>
+      </Layout>
+    );
   }
 }

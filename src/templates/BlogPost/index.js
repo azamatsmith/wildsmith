@@ -1,8 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import Disqus from 'disqus-react';
-import {AuthorProfile, Container, SEO} from 'components';
+import {AuthorProfile, Container, Layout, SEO} from 'components';
 import 'prismjs/themes/prism-solarizedlight.css';
 import types from './types';
 import './BlogPost.scss';
@@ -44,39 +45,41 @@ export default class BlogPost extends React.Component {
     // <p>{tags.length && this._renderTags(tags)}</p>
 
     return (
-      <div className="BlogPost pt5 sans-serif">
-        <div className="ph3 mw7 center-ns">
-          <AuthorProfile
-            author={frontmatter.author}
-            date={frontmatter.date}
-            timeToRead={timeToRead}
+      <Layout>
+        <div className="BlogPost pt5 sans-serif">
+          <div className="ph3 mw7 center-ns">
+            <AuthorProfile
+              author={frontmatter.author}
+              date={frontmatter.date}
+              timeToRead={timeToRead}
+            />
+            <h1 className={`${frontmatter.subTitle ? 'mb2' : 'mb4'}`}>
+              {frontmatter.title}
+            </h1>
+            {frontmatter.subTitle && <h2>{frontmatter.subTitle}</h2>}
+            {frontmatter.image && this._renderImage(frontmatter.image)}
+          </div>
+
+          <Container className="flex flex-column w-100 ma0">
+            <div
+              className="BlogPost-body mb4"
+              dangerouslySetInnerHTML={{__html: html}}
+            />
+
+            <Disqus.DiscussionEmbed
+              shortname={'wildsmithstudio'}
+              config={this._disqusConfig()}
+            />
+          </Container>
+          <SEO
+            excerpt={excerpt}
+            isBlogPost={true}
+            {...frontmatter}
+            slug={fields.slug}
+            title={frontmatter.title}
           />
-          <h1 className={`${frontmatter.subTitle ? 'mb2' : 'mb4'}`}>
-            {frontmatter.title}
-          </h1>
-          {frontmatter.subTitle && <h2>{frontmatter.subTitle}</h2>}
-          {frontmatter.image && this._renderImage(frontmatter.image)}
         </div>
-
-        <Container className="flex flex-column w-100 ma0">
-          <div
-            className="BlogPost-body mb4"
-            dangerouslySetInnerHTML={{__html: html}}
-          />
-
-          <Disqus.DiscussionEmbed
-            shortname={'wildsmithstudio'}
-            config={this._disqusConfig()}
-          />
-        </Container>
-        <SEO
-          excerpt={excerpt}
-          isBlogPost={true}
-          {...frontmatter}
-          slug={fields.slug}
-          title={frontmatter.title}
-        />
-      </div>
+      </Layout>
     );
   }
 }
