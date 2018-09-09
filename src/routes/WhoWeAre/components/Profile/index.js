@@ -42,12 +42,16 @@ export default class Profile extends React.Component {
 
 export const profileImageFragment = graphql`
   fragment ProfileImage on Query {
-    mattProfile: imageSharp(id: {regex: "/matt-profile.png/"}) {
+    mattProfile: imageSharp(
+      fluid: {originalName: {regex: "/matt-profile.png/"}}
+    ) {
       resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }
     }
-    rachelProfile: imageSharp(id: {regex: "/rachel-profile.png/"}) {
+    rachelProfile: imageSharp(
+      fluid: {originalName: {regex: "/rachel-profile.png/"}}
+    ) {
       resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }

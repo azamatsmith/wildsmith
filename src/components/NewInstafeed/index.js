@@ -34,6 +34,11 @@ export default class NewInstafeed extends React.Component {
   };
 
   render() {
+    //TODO: Remove this check
+    if (!this.props.data.allFile) {
+      console.log('cannot load instafeed');
+      return null;
+    }
     return (
       <div className="flex flex-wrap mh5 justify-center">
         {this._renderImages()}

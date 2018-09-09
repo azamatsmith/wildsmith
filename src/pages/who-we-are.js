@@ -3,8 +3,8 @@ import {graphql} from 'gatsby';
 import {Layout} from 'components';
 import {WhoWeAre} from 'routes';
 
-export default ({data}) => (
-  <Layout>
+export default ({data, location}) => (
+  <Layout location={location}>
     <WhoWeAre {...data} />
   </Layout>
 );
