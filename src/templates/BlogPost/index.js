@@ -27,7 +27,7 @@ export default class BlogPost extends React.Component {
   _disqusConfig = () => {
     const {fields, frontmatter} = this.props.data.markdownRemark;
     return {
-      url: '',
+      url: `https://wildsmithstudio.com${fields.slug}`,
       identifier: fields.slug,
       title: frontmatter.title,
     };
