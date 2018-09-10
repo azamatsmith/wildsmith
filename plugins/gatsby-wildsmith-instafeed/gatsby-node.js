@@ -6,8 +6,8 @@ const query = require('./query');
 const API_URI = 'https://wildsmith-instagram.herokuapp.com/graphql';
 
 console.log(chalk.blue('\nFetching Instagram Images from api'));
-exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
-  const {createNode, createNodeField} = boundActionCreators;
+exports.sourceNodes = async ({actions, createNodeId, store, cache}) => {
+  const {createNode, createNodeField} = actions;
   const client = new GraphQLClient(API_URI);
   const queryResult = await client.request(query);
 
@@ -20,11 +20,13 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
     );
     let fileNode;
     try {
+      const url = image.images.standard_resolution.url.split('?')[0];
       fileNode = await createRemoteFileNode({
-        url: image.images.standard_resolution.url.split('?')[0],
+        url,
         cache,
         store,
         createNode,
+        createNodeId,
       });
       await createNodeField({
         node: fileNode,
@@ -41,7 +43,7 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
         name: 'created',
         value: image.created_time,
       });
-      console.log('filenode', i + 1, ' created');
+      console.log('\nFilenode', i + 1, ' created');
     } catch (error) {
       console.warn('error creating node', error);
     }

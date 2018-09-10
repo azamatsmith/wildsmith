@@ -1,55 +1,32 @@
 @import '~styles/variables'; // Must appear before tachyons.scss
 @import '~tachyons-sass/tachyons.scss';
 
-.link-0.active ~ hr {
-  margin-left: 20px;
-  max-width: 20%;
+// Link style
+.nav-link {
+  position: relative;
+  text-decoration: none;
 }
 
-.link-1.active ~ hr {
-  margin-left: calc(25% + 20px);
-  max-width: 20%;
+.nav-link:hover {
 }
 
-.link-2.active ~ hr {
-  margin-left: calc(50% + 20px);
-  max-width: 20%;
+.nav-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $orange;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
-.link-3.active ~ hr {
-  margin-left: calc(75% + 20px);
-  max-width: 20%;
-}
-
-.Navbar-hr {
-  margin-top: -5px;
-}
-
-.transition-3 {
-  transition: 250ms ease-in;
-}
-
-/*===========================================
-            BREAKPOINTS
-===========================================*/
-@media only screen and (min-width: 30em) {
-  .link-0.active ~ hr {
-    margin-left: 2px;
-    max-width: 9%;
-  }
-
-  .link-1.active ~ hr {
-    margin-left: calc(25% + 2px);
-    max-width: 17%;
-  }
-
-  .link-2.active ~ hr {
-    margin-left: calc(50% + 2px);
-    max-width: 11%;
-  }
-
-  .link-3.active ~ hr {
-    margin-left: calc(75% + 2px);
-    max-width: 8%;
-  }
+.nav-link.active:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }

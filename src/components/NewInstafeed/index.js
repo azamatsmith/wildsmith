@@ -1,4 +1,5 @@
 import React from 'react';
+import {graphql} from 'gatsby';
 import ImagesType from './types';
 import Img from 'gatsby-image';
 
@@ -25,7 +26,7 @@ export default class NewInstafeed extends React.Component {
           <Img
             className=""
             outerWrapperClassName="ma3 pointer"
-            resolutions={image.childImageSharp.resolutions}
+            fixed={image.childImageSharp.fixed}
           />
         </a>
       );
@@ -42,7 +43,7 @@ export default class NewInstafeed extends React.Component {
 }
 
 export const instagramImagesFragment = graphql`
-  fragment InstagramImages on RootQueryType {
+  fragment InstagramImages on Query {
     allFile(
       filter: {fields: {InstagramImage: {eq: "true"}}}
       sort: {fields: [fields___created], order: DESC}
@@ -53,8 +54,8 @@ export const instagramImagesFragment = graphql`
             link
           }
           childImageSharp {
-            resolutions(height: 450) {
-              ...GatsbyImageSharpResolutions
+            fixed(height: 450, width: 400) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

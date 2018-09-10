@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import GatsbyLink from 'gatsby-link';
 import Image from 'gatsby-image';
-import { Icon } from 'components';
+import {Icon} from 'components';
 
 export default class Profile extends React.Component {
   static propTypes = {
@@ -17,14 +18,7 @@ export default class Profile extends React.Component {
   };
 
   render() {
-    const {
-      extraStyles,
-      image,
-      instagram,
-      linkedin,
-      name,
-      twitter,
-    } = this.props;
+    const {extraStyles, image, instagram, linkedin, name, twitter} = this.props;
     const linkStyle = 'dim link pointer ma3';
 
     return (
@@ -47,13 +41,17 @@ export default class Profile extends React.Component {
 }
 
 export const profileImageFragment = graphql`
-  fragment ProfileImage on RootQueryType {
-    mattProfile: imageSharp(id: { regex: "/matt-profile.png/" }) {
+  fragment ProfileImage on Query {
+    mattProfile: imageSharp(
+      fluid: {originalName: {regex: "/matt-profile.png/"}}
+    ) {
       resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }
     }
-    rachelProfile: imageSharp(id: { regex: "/rachel-profile.png/" }) {
+    rachelProfile: imageSharp(
+      fluid: {originalName: {regex: "/rachel-profile.png/"}}
+    ) {
       resolutions(width: 339, height: 339) {
         ...GatsbyImageSharpResolutions
       }

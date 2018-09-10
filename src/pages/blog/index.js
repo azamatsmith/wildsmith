@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import {BlogHero, BlogPostItem} from 'components';
+import {graphql} from 'gatsby';
+import {BlogHero, BlogPostItem, Layout} from 'components';
 import types from './_types';
 
 export default class Blog extends React.Component {
@@ -33,9 +34,11 @@ export default class Blog extends React.Component {
 
   render() {
     return (
-      <div className="Blog flex flex-column items-center">
-        <div className="mt5 mb4 mh3 mh0-ns">{this._renderPosts()}</div>
-      </div>
+      <Layout location={this.props.location}>
+        <div className="Blog flex flex-column items-center">
+          <div className="mt5 mb4 mh3 mh0-ns">{this._renderPosts()}</div>
+        </div>
+      </Layout>
     );
   }
 }

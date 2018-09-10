@@ -10,47 +10,36 @@ export default class Navbar extends Component {
 
   static defaultProps = {};
 
-  // PRIVATE
-
-  _getClass = (name, index) => {
-    const baseClass = `Navbar-link link-${index} link near-black b f6 f5-ns dib pt4 tc tl-ns`;
-    const route = this.props.currentRoute.split('/')[1];
-    return route === name ? `${baseClass} active` : baseClass;
+  _getClass = path => {
+    const active =
+      path === this.props.currentRoute ||
+      path === `${this.props.currentRoute}/`;
+    const baseClass = `nav-link pointer link near-black b f6 f5-ns dib pt4 tc tl-ns mh2 mh4-ns pa1 ${
+      active ? 'active' : ''
+    }`;
+    return baseClass;
   };
 
   render() {
-    const width = '25%';
+    const {currentRoute} = this.props;
     return (
-      <nav className="Navbar w-100 flex justify-around justify-end-ns">
-        <div className="w-100 w-40-ns">
-          <GatsbyLink className={this._getClass('', 0)} to="/" style={{width}}>
+      <nav className="Navbar w-100">
+        <div className="flex justify-around justify-end-ns mr5-ns">
+          <GatsbyLink className={this._getClass('/')} to="/">
             home
           </GatsbyLink>
           <GatsbyLink
-            className={this._getClass('who-we-are', 1)}
+            className={this._getClass('/who-we-are/')}
             to="/who-we-are"
-            style={{width}}
           >
             who we are
           </GatsbyLink>
-          <GatsbyLink
-            className={this._getClass('contact', 2)}
-            to="/contact"
-            style={{width}}
-          >
+          <GatsbyLink className={this._getClass('/contact/')} to="/contact">
             contact
           </GatsbyLink>
-          <GatsbyLink
-            className={this._getClass('blog', 3)}
-            to="/blog"
-            style={{width}}
-          >
+          <GatsbyLink className={this._getClass('/blog/')} to="/blog">
             blog
           </GatsbyLink>
-          <hr
-            className="Navbar-hr mb0 bg-orange transition-3 bn"
-            style={{height: '.25rem'}}
-          />
         </div>
       </nav>
     );
