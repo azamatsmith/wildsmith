@@ -5,7 +5,14 @@ module.exports = {
   },
 
   plugins: [
-    'gatsby-wildsmith-instafeed',
+    // 'gatsby-wildsmith-instafeed',
+    {
+      resolve: 'gatsby-source-instagram',
+      options: {
+        accessToken: '6943356364.18e5e2e.d8d491ac55f34a3ba1f85e6a3c763c9c',
+        limit: 6,
+      },
+    },
     'wildsmith-blog',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
