@@ -6,7 +6,6 @@ export {default as Container} from './Container';
 export {default as Email} from './Email';
 export {default as Footer} from './Footer';
 export {default as Gravatar} from './Gravatar';
-export {default as Header} from './Header';
 export {default as Icon} from './Icon';
 export {default as Input} from './Input';
 export {default as Layout} from './Layout';

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import GatsbyLink from 'gatsby-link';
+import {Link as GatsbyLink} from 'gatsby';
 import './Navbar.scss';
 
 export default class Navbar extends Component {

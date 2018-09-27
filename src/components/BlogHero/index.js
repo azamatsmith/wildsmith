@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
-import GatsbyLink from 'gatsby-link';
+import {Link as GatsbyLink} from 'gatsby';
 import {Gravatar} from 'components';
 
 export default class BlogHero extends React.Component {
