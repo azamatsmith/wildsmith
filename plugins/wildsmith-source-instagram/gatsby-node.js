@@ -8,7 +8,7 @@ exports.sourceNodes = async (
   const {accessToken, limit} = configOptions;
   if (!accessToken) {
     return console.error(
-      'gatsby-source-instagram failed, pleaes provide access token'
+      'ERROR: gatsby-source-instagram failed, pleaes provide access token'
     );
   }
   const {createNode, createNodeField} = actions;

@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: '.env',
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Wildsmith Studio site',
@@ -5,11 +9,10 @@ module.exports = {
   },
 
   plugins: [
-    // 'gatsby-wildsmith-instafeed',
     {
-      resolve: 'gatsby-source-instagram',
+      resolve: 'wildsmith-source-instagram',
       options: {
-        accessToken: '6943356364.18e5e2e.d8d491ac55f34a3ba1f85e6a3c763c9c',
+        accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
         limit: 6,
       },
     },
