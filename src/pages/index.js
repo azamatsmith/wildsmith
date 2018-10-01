@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layout} from 'components';
 import {Home} from 'routes';
-import {graphql} from 'gatsby';
+// import {graphql} from 'gatsby';
 
 export default ({data, location}) => (
   <Layout location={location}>
@@ -9,8 +9,8 @@ export default ({data, location}) => (
   </Layout>
 );
 
-export const query = graphql`
-  query InstaFeedQuery {
-    ...InstagramImages
-  }
-`;
+// export const query = graphql`
+//   query InstaFeedQuery {
+//     ...InstagramImages
+//   }
+// `;

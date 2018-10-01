@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
-import {NewInstafeed, TitleText} from 'components';
-import ImagesType from 'components/NewInstafeed/types';
+import {Instafeed, TitleText} from 'components';
 import PropTypes from 'prop-types';
 import './Home.scss';
 
 export default class Home extends Component {
-  static propTypes = {
-    ...ImagesType,
-  };
-
-  static defaultProps = {};
-
   state = {
     highlightActive: false,
   };
@@ -45,7 +38,7 @@ export default class Home extends Component {
             Product Stategy | UX Design | Development
           </p>
         </div>
-        <NewInstafeed data={this.props.data} />
+        <Instafeed />
       </div>
     );
   }
