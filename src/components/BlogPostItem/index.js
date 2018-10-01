@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GatsbyLink from 'gatsby-link';
+import {Link as GatsbyLink} from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import {Gravatar} from 'components';
 // import types from './types';

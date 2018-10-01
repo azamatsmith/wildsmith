@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: '.env',
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Wildsmith Studio site',
@@ -5,7 +9,15 @@ module.exports = {
   },
 
   plugins: [
-    'gatsby-wildsmith-instafeed',
+    {
+      resolve: 'wildsmith-source-instagram',
+      options: {
+        accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
+        limit: 6,
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-netlify-cache`,
     'wildsmith-blog',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
