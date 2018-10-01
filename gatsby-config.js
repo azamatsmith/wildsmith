@@ -16,6 +16,7 @@ module.exports = {
         limit: 6,
       },
     },
+    `gatsby-plugin-styled-components`,
     'wildsmith-blog',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',

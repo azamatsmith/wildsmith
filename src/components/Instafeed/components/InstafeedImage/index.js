@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyImage from 'gatsby-image';
 
-export default class extends React.Component {
+export default class InstafeedImage extends React.Component {
   static propTypes = {
     image: PropTypes.any,
   };
