@@ -17,6 +17,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-netlify-cache`,
     'wildsmith-blog',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
