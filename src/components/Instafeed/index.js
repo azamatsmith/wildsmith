@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 import InstafeedImage from './components/InstafeedImage';
 
-export default class NewInstafeed extends React.Component {
+export default class Instafeed extends React.Component {
   static propTypes = {};
 
   static defaultProps = {};
@@ -12,7 +12,6 @@ export default class NewInstafeed extends React.Component {
   _renderImages = data => {
     // error checking for images
     const images = data.allFile.edges.map(({node}) => ({...node}));
-    console.log({images});
     return images
       .filter(image => image.childImageSharp)
       .map(image => <InstafeedImage image={image} />);
