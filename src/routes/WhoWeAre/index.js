@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {P, UnderlineText} from 'components';
+import {P, TitleText, UnderlineHighlight} from 'components';
 import Profile from './components/Profile';
 
 export default class WhoWeAre extends React.Component {
@@ -21,11 +21,10 @@ export default class WhoWeAre extends React.Component {
     return (
       <div className="WhoWeAre">
         <div className="flex flex-column items-center mh3">
-          <UnderlineText
-            extraStyles="mb0"
-            highlightStyle={{left: '5px', width: '132px'}}
-            text="who we are"
-          />
+          <TitleText>
+            <UnderlineHighlight left={1}>who </UnderlineHighlight>
+            we are
+          </TitleText>
           <div className="tc">
             <P extraStyles={`${pStyle} mt0`}>
               We are a Colorado-based designer and developer team.

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Instafeed, TitleText, UnderlineHighlight} from 'components';
-// import PropTypes from 'prop-types';
 import './Home.scss';
 
 export default class Home extends Component {
