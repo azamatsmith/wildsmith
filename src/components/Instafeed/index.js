@@ -14,7 +14,7 @@ export default class Instafeed extends React.Component {
     const images = data.allFile.edges.map(({node}) => ({...node}));
     return images
       .filter(image => image.childImageSharp)
-      .map(image => <InstafeedImage image={image} />);
+      .map(image => <InstafeedImage key={image.fields.link} image={image} />);
   };
 
   render() {
