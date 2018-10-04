@@ -10,6 +10,10 @@ const StyledUnderline = styled.span`
   transform: ${props => (props.ready ? 'scaleX(1)' : 'scaleX(0)')};
   transform-origin: left;
   z-index: -2;
+  @media (max-width: 500px) {
+    bottom: 7px;
+    height: 9px;
+  }
 `;
 
 export default class UnderlineHighlight extends React.Component {
