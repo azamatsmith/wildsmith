@@ -1,4 +1,5 @@
 const axios = require('axios');
+const chalk = require('chalk');
 const {createRemoteFileNode} = require('gatsby-source-filesystem');
 
 exports.sourceNodes = async (
@@ -7,8 +8,10 @@ exports.sourceNodes = async (
 ) => {
   const {accessToken, limit} = configOptions;
   if (!accessToken) {
-    return console.error(
-      'ERROR: gatsby-source-instagram failed, pleaes provide access token'
+    return console.log(
+      chalk.red(
+        'Error: gatsby-source-instagram failed, pleaes provide access token'
+      )
     );
   }
   const {createNode, createNodeField} = actions;
