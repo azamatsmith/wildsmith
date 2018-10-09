@@ -33,7 +33,7 @@ export default class Instafeed extends React.Component {
                       link
                     }
                     childImageSharp {
-                      fixed(height: 450, width: 400) {
+                      fixed(height: 405, width: 360) {
                         ...GatsbyImageSharpFixed
                       }
                     }
