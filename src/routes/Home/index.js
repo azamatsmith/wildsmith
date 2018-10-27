@@ -14,7 +14,7 @@ export default class Home extends Component {
             </TitleText>
           </div>
           <p className="mt-2 mb7 sans-serif near-black">
-            Product Stategy | UX Design | Development
+            Product Strategy | UX Design | Development
           </p>
         </div>
         <Instafeed />
