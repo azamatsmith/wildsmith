@@ -92,12 +92,11 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
     let fileNode;
     try {
       fileNode = await createRemoteFileNode({
-        // Add split so createRemoteFileNode creates the correct extension
-        // (Instagram sometimes adds additional url params causing this bug)
-        url: image.images.standard_resolution.url.split('?')[0],
+        url: image.images.standard_resolution.url,
         cache,
         store,
         createNode,
+        ext: '.jpg',
       });
       // TODO: add additional fields
     } catch (error) {
