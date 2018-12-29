@@ -42,11 +42,13 @@ export default class SEO extends React.Component {
     // defaults
     const thisDescription = excerpt || config.description;
     // const theseKeywords = keywords || config.keywords;
+    console.log({imageSrc});
 
     return (
       <Helmet>
         <html lang="en" />
         <title>{title || 'Wildsmith Studio'}</title>
+
         {/* General tags */}
         <meta name="description" content={thisDescription} />
         <meta name="image" content={imageSrc} />
