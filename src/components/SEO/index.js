@@ -22,38 +22,39 @@ export default class SEO extends React.Component {
     title: null,
   };
 
-  // _getSchema = ({imageSrc, url, person}) => {
-  //   // const image = this._getProperty('image');
-  //   // const date = moment(this.props.date, 'MMMM Do YYYY').format();
-  //   console.log({person});
-  //   return {
-  //     '@context': 'http://schema.org',
-  //     '@type': 'BlogPosting',
-  //     mainEntityOfPage: {
-  //       '@type': 'WebPage',
-  //       '@id': url,
-  //     },
-  //     headline: '',
-  //     image: [imageSrc && imageSrc],
-  //     // datePublished: date,
-  //     // if article modified after release
-  //     // "dateModified": "2018-11-14T09:20:00+08:00",
-  //     author: {
-  //       '@type': 'Person',
-  //       // name: this._getProperty('author'),
-  //     },
-  //     publisher: {
-  //       '@type': 'Organization',
-  //       name: 'Wildsmith Studio',
-  //       logo: {
-  //         '@type': 'ImageObject',
-  //         url: '',
-  //         // '',
-  //       },
-  //     },
-  //     // description: this._getProperty('description'),
-  //   };
-  // };
+  _getSchema = ({imageSrc, url, person}) => {
+    // const image = this._getProperty('image');
+    // const date = moment(this.props.date, 'MMMM Do YYYY').format();
+    console.log({imageSrc, url, person});
+    console.log(this.props);
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+      },
+      headline: '',
+      image: [imageSrc && imageSrc],
+      // datePublished: date,
+      // if article modified after release
+      // "dateModified": "2018-11-14T09:20:00+08:00",
+      author: {
+        '@type': 'Person',
+        // name: this._getProperty('author'),
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Wildsmith Studio',
+        logo: {
+          '@type': 'ImageObject',
+          url: '',
+          // '',
+        },
+      },
+      // description: this._getProperty('description'),
+    };
+  };
 
   render() {
     const {

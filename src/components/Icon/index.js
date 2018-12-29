@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// test
 
 export default class Icon extends React.Component {
   static propTypes = {
@@ -8,7 +7,8 @@ export default class Icon extends React.Component {
   };
 
   render() {
-    const src = require(`./images/${this.props.name}.svg`);
-    return <img src={src} />;
+    const {name} = this.props;
+    const src = require(`./images/${name}.svg`);
+    return <img alt={`${name} icon`} src={src} />;
   }
 }

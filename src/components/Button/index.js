@@ -15,10 +15,10 @@ export default class Button extends React.Component {
     loading: false,
   };
 
-  _renderLoading = () => <img src={loadingIcon} />;
+  _renderLoading = () => <img alt="Loading" src={loadingIcon} />;
 
   render() {
-    const { children, extraStyles, loading, ...rest } = this.props;
+    const {children, extraStyles, loading, ...rest} = this.props;
     return (
       <button
         className={`pv3 ph5 bg-orange white br2 ba b--orange dim sans-serif pointer ${extraStyles}`}

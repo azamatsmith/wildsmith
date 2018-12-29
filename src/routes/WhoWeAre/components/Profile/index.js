@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-import {Link as GatsbyLink} from 'gatsby';
 import Image from 'gatsby-image';
 import {Icon} from 'components';
 
@@ -18,20 +17,35 @@ export default class Profile extends React.Component {
   };
 
   render() {
-    const {extraStyles, image, instagram, linkedin, name, twitter} = this.props;
+    const {extraStyles, image, instagram, linkedin, twitter} = this.props;
     const linkStyle = 'dim link pointer ma3';
 
     return (
       <div className={`Profile flex flex-column ${extraStyles}`}>
         <Image resolutions={image.resolutions} />
         <div className="flex justify-center items-center">
-          <a className={linkStyle} href={instagram} target="_blank">
+          <a
+            className={linkStyle}
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon name="instagram" />
           </a>
-          <a className={linkStyle} href={linkedin} target="_blank">
+          <a
+            className={linkStyle}
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon name="linkedin" />
           </a>
-          <a className={linkStyle} href={twitter} target="_blank">
+          <a
+            className={linkStyle}
+            href={twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon name="twitter" />
           </a>
         </div>

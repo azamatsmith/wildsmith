@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { P } from 'components';
+import {P} from 'components';
 
 export default class SubmittedForm extends React.Component {
   render() {
