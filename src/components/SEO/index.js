@@ -23,7 +23,16 @@ export default class SEO extends React.Component {
     title: null,
   };
 
-  _getSchema = ({imageSrc, url, person}) => {
+  _getCompanySchema = () => {
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'Organization',
+      url: 'https://www.wildsmithstudio.com',
+      logo: 'https://www.wildsmithstudio.com/apple-icon-60x60.png',
+    };
+  };
+
+  _getBlogSchema = ({imageSrc, url, person}) => {
     const {author, description, title} = this.props;
     const datePublished = moment(this.props.date, 'MMMM Do YYYY').format();
     const dateModified = moment().format();
@@ -54,6 +63,19 @@ export default class SEO extends React.Component {
     };
   };
 
+  _getSocialSchema = () => {
+    return {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Wildsmith Studio",
+      "url": "https://www.wildsmithstudio.com",
+      "sameAs": [
+        "https://www.instagram.com/wildsmith.studio/",
+        "https://www.linkedin.com/company/wildsmith-studio-llc",
+      ]
+    }
+  }
+
   render() {
     const {
       author,
@@ -71,7 +93,11 @@ export default class SEO extends React.Component {
     let imageSrc =
       image && image.childImageSharp ? image.childImageSharp.sizes.src : null;
     imageSrc = imageSrc ? `${BASE_URL}${imageSrc}` : imageSrc;
-    const schema = isBlogPost ? this._getSchema({imageSrc, url, person}) : null;
+    const blogSchema = isBlogPost
+      ? this._getBlogSchema({imageSrc, url, person})
+      : null;
+    const companySchema = this._getCompanySchema();
+    const socialSchema = this._getSocialSchema();
 
     // <meta property="fb:app_id" content={config.fbAppID} />
 
@@ -99,8 +125,17 @@ export default class SEO extends React.Component {
 
         {/* Schema.org */}
         {isBlogPost && (
-          <script type="application/ld+json">{JSON.stringify(schema)}</script>
+          <script type="application/ld+json">
+            {JSON.stringify(blogSchema)}
+          </script>
         )}
+        <script type="application/ld+json">
+          {JSON.stringify(companySchema)}
+        </script>
+        {/* Social Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(socialSchema)}
+        </script>
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
