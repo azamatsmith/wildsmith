@@ -22,12 +22,45 @@ export default class SEO extends React.Component {
     title: null,
   };
 
+  _getSchema = ({imageSrc, url, person}) => {
+    // const image = this._getProperty('image');
+    // const date = moment(this.props.date, 'MMMM Do YYYY').format();
+    console.log({person});
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+      },
+      // headline: ,
+      image: [imageSrc && imageSrc],
+      // datePublished: date,
+      // if article modified after release
+      // "dateModified": "2018-11-14T09:20:00+08:00",
+      author: {
+        '@type': 'Person',
+        // name: this._getProperty('author'),
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Wildsmith Studio',
+        logo: {
+          '@type': 'ImageObject',
+          url: '',
+          // '',
+        },
+      },
+      // description: this._getProperty('description'),
+    };
+  };
+
   render() {
     const {
       author,
-      description,
+      // description,
       excerpt,
-      keywords,
+      // keywords,
       image,
       isBlogPost,
       slug,
@@ -39,12 +72,12 @@ export default class SEO extends React.Component {
     let imageSrc =
       image && image.childImageSharp ? image.childImageSharp.sizes.src : null;
     imageSrc = imageSrc ? `${BASE_URL}${imageSrc}` : imageSrc;
+    const schema = this._getSchema({imageSrc, url, person});
     // <meta property="fb:app_id" content={config.fbAppID} />
 
     // defaults
     const thisDescription = excerpt || config.description;
     // const theseKeywords = keywords || config.keywords;
-    console.log({imageSrc});
 
     return (
       <Helmet>
@@ -72,10 +105,7 @@ export default class SEO extends React.Component {
         />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={thisDescription} />
-        <meta
-          name="twitter:image"
-          content={`https://wildsmithstudio.com${imageSrc}`}
-        />
+        <meta name="twitter:image" content={imageSrc} />
 
         <meta
           name="google-site-verification"
