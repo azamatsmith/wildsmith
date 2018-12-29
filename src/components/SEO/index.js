@@ -67,7 +67,7 @@ export default class SEO extends React.Component {
       title,
     } = this.props;
     const BASE_URL = `https://wildsmithstudio.com`;
-    const url = `${BASE_URL}${slug}`;
+    const url = `${BASE_URL}${slug || ''}`;
     const person = personLookup(author);
     let imageSrc =
       image && image.childImageSharp ? image.childImageSharp.sizes.src : null;
