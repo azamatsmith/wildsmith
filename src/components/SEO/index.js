@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import moment from 'moment';
 import {personLookup} from 'helpers';
 import config from './config';
 
@@ -23,10 +24,9 @@ export default class SEO extends React.Component {
   };
 
   _getSchema = ({imageSrc, url, person}) => {
-    // const image = this._getProperty('image');
-    // const date = moment(this.props.date, 'MMMM Do YYYY').format();
-    console.log({imageSrc, url, person});
-    console.log(this.props);
+    const {author, description, title} = this.props;
+    const datePublished = moment(this.props.date, 'MMMM Do YYYY').format();
+    const dateModified = moment().format();
     return {
       '@context': 'http://schema.org',
       '@type': 'BlogPosting',
@@ -34,32 +34,30 @@ export default class SEO extends React.Component {
         '@type': 'WebPage',
         '@id': url,
       },
-      headline: '',
+      headline: title,
       image: [imageSrc && imageSrc],
-      // datePublished: date,
-      // if article modified after release
-      // "dateModified": "2018-11-14T09:20:00+08:00",
+      datePublished,
+      dateModified,
       author: {
         '@type': 'Person',
-        // name: this._getProperty('author'),
+        name: author,
       },
       publisher: {
         '@type': 'Organization',
         name: 'Wildsmith Studio',
         logo: {
           '@type': 'ImageObject',
-          url: '',
-          // '',
+          url: 'https://wildsmithstudio.com/apple-icon-60x60.png',
         },
       },
-      // description: this._getProperty('description'),
+      description,
     };
   };
 
   render() {
     const {
       author,
-      // description,
+      description,
       excerpt,
       // keywords,
       image,
@@ -73,11 +71,12 @@ export default class SEO extends React.Component {
     let imageSrc =
       image && image.childImageSharp ? image.childImageSharp.sizes.src : null;
     imageSrc = imageSrc ? `${BASE_URL}${imageSrc}` : imageSrc;
-    // const schema = this._getSchema({imageSrc, url, person});
+    const schema = isBlogPost ? this._getSchema({imageSrc, url, person}) : null;
+
     // <meta property="fb:app_id" content={config.fbAppID} />
 
     // defaults
-    const thisDescription = excerpt || config.description;
+    const thisDescription = excerpt || config.description || description;
     // const theseKeywords = keywords || config.keywords;
 
     return (
@@ -97,6 +96,11 @@ export default class SEO extends React.Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={thisDescription} />
         <meta property="og:image" content={imageSrc} />
+
+        {/* Schema.org */}
+        {isBlogPost && (
+          <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        )}
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />

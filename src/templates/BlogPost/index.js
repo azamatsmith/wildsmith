@@ -98,6 +98,7 @@ export const query = graphql`
       frontmatter {
         author
         date(formatString: "MMMM DD, YYYY")
+        description
         image {
           childImageSharp {
             sizes(maxWidth: 786) {
