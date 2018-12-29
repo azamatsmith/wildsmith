@@ -9,18 +9,18 @@ module.exports = {
   },
 
   plugins: [
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'Wildsmith Studio',
-    //     short_name: 'Wildsmith',
-    //     background_color: '#FFFFFF',
-    //     theme_color: '#e6bf9d',
-    //     display: 'fullscreen',
-    //     start_url: '/',
-    //     icon: 'static/wildsmith-icon.png',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Wildsmith Studio',
+        short_name: 'Wildsmith',
+        background_color: '#FFFFFF',
+        theme_color: '#e6bf9d',
+        display: 'fullscreen',
+        start_url: '/',
+        icon: 'static/wildsmith-icon.png',
+      },
+    },
     {
       resolve: 'wildsmith-source-instagram',
       options: {

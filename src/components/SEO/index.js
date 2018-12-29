@@ -33,10 +33,12 @@ export default class SEO extends React.Component {
       slug,
       title,
     } = this.props;
-    const url = `https://wildsmithstudio.com${slug}`;
+    const BASE_URL = `https://wildsmithstudio.com`;
+    const url = `${BASE_URL}${slug}`;
     const person = personLookup(author);
-    const imageSrc =
+    let imageSrc =
       image && image.childImageSharp ? image.childImageSharp.sizes.src : null;
+    imageSrc = imageSrc ? `${BASE_URL}${imageSrc}` : imageSrc;
     // <meta property="fb:app_id" content={config.fbAppID} />
 
     // defaults
