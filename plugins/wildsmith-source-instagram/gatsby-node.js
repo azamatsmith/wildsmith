@@ -27,13 +27,12 @@ exports.sourceNodes = async (
     let fileNode;
     try {
       fileNode = await createRemoteFileNode({
-        // Add split so createRemoteFileNode creates the correct extension
-        // (Instagram sometimes adds additional url params causing this bug)
-        url: image.images.standard_resolution.url.split('?')[0],
+        url: image.images.standard_resolution.url,
         cache,
         store,
         createNode,
         createNodeId,
+        ext: '.jpg',
       });
       await createNodeField({
         node: fileNode,
@@ -60,6 +59,9 @@ exports.sourceNodes = async (
         name: 'likes',
         value: image.likes.count,
       });
+      if (fileNode) {
+        image.localFile___NODE = fileNode.id;
+      }
     } catch (error) {
       console.warn('error creating node', error);
     }
