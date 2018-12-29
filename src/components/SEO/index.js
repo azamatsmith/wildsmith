@@ -116,6 +116,7 @@ export default class SEO extends React.Component {
           name="google-site-verification"
           content="suN54CQEQShPSHv4aERWv0bskIBSLOiESbfYeNXHdNc"
         />
+        <meta name="msvalidate.01" content="0465C1D45DEEEEAB1F65E6FCD36A2FC2" />
       </Helmet>
     );
   }
