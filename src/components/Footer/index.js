@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { P } from 'components';
+// import PropTypes from 'prop-types';
+import {P} from 'components';
 
 export default class Footer extends React.Component {
   static propTypes = {};

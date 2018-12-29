@@ -5,7 +5,7 @@ import './Navbar.scss';
 
 export default class Navbar extends Component {
   static propTypes = {
-    currentRoute: PropTypes.string,
+    currentRoute: PropTypes.string.isRequired,
   };
 
   static defaultProps = {};
@@ -21,7 +21,6 @@ export default class Navbar extends Component {
   };
 
   render() {
-    const {currentRoute} = this.props;
     return (
       <nav className="Navbar w-100">
         <div className="flex justify-around justify-end-ns mr5-ns">

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import {Header, Footer, SEO, Manifest, Navbar} from 'components';
+import {Footer, SEO, Manifest, Navbar} from 'components';
 import 'styles/main.scss';
 
 class Layout extends Component {

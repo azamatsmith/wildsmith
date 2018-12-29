@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import Disqus from 'disqus-react';
@@ -42,10 +43,9 @@ export default class BlogPost extends React.Component {
     } = this.props.data.markdownRemark;
     // const {tags} = fields;
     // <p>{tags.length && this._renderTags(tags)}</p>
-    const simulatedLocation = {pathname: '/blog/'};
 
     return (
-      <Layout location={simulatedLocation}>
+      <Layout>
         <div className="BlogPost pt5 sans-serif">
           <div className="ph3 mw7 center-ns">
             <AuthorProfile
@@ -98,7 +98,6 @@ export const query = graphql`
       frontmatter {
         author
         date(formatString: "MMMM DD, YYYY")
-        description
         image {
           childImageSharp {
             sizes(maxWidth: 786) {
