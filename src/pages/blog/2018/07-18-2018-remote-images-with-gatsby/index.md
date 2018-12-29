@@ -22,7 +22,7 @@ First we're going to need a few packages. You may already be using some of them 
 - `gatsby-transformer-sharp`
 - `gatsby-plugin-sharp`
 
-```
+```bash
 npm install --save gatsby-source-filesystem axios gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 
 or
