@@ -22,7 +22,7 @@ First we're going to need a few packages. You may already be using some of them 
 - `gatsby-transformer-sharp`
 - `gatsby-plugin-sharp`
 
-```
+```bash
 npm install --save gatsby-source-filesystem axios gatsby-image gatsby-transformer-sharp gatsby-plugin-sharp
 
 or
@@ -92,12 +92,11 @@ exports.sourceNodes = async ({boundActionCreators, store, cache}) => {
     let fileNode;
     try {
       fileNode = await createRemoteFileNode({
-        // Add split so createRemoteFileNode creates the correct extension
-        // (Instagram sometimes adds additional url params causing this bug)
-        url: image.images.standard_resolution.url.split('?')[0],
+        url: image.images.standard_resolution.url,
         cache,
         store,
         createNode,
+        ext: '.jpg',
       });
       // TODO: add additional fields
     } catch (error) {
