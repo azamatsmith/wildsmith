@@ -6,6 +6,7 @@ export {default as Container} from './Container';
 export {default as Email} from './Email';
 export {default as Footer} from './Footer';
 export {default as Gravatar} from './Gravatar';
+export {default as HomepageHero} from './HomepageHero';
 export {default as Icon} from './Icon';
 export {default as Input} from './Input';
 export {default as Instafeed} from './Instafeed';
