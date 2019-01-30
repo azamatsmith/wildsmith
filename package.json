@@ -20,6 +20,7 @@
     "gatsby-plugin-offline": "^2.0.20",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-resolve-src": "next",
+    "gatsby-plugin-rollbar": "^1.0.0",
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-plugin-sitemap": "next",
