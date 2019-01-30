@@ -7623,15 +7623,6 @@ fs-extra@^5.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
-  integrity sha512-GnyIkKhhzXZUWFCaJzvyDLEEgDkPfb4/TPvJCJVuS8MWZgoSsErf++QpiAlDnKFcqhRlm+tIOcencCjyJE6ZCA==
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
 fs-extra@^7.0.0:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
@@ -7778,14 +7769,6 @@ gatsby-plugin-manifest@^2.0.4:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
     sharp "^0.21.0"
-
-gatsby-plugin-netlify-cache@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cache/-/gatsby-plugin-netlify-cache-0.1.0.tgz#79dfa82609364b37c10fdec1bc9911c9409483ae"
-  integrity sha512-fJSvxaPUAbcfNRmh9+A6SzL1VNQ6axCH7duwrQIGeqVyvM7IYpppqs+ahvceDCeS6XOm963zSYcaBvIc9E+Rcw==
-  dependencies:
-    babel-runtime "^6.26.0"
-    fs-extra "^6.0.1"
 
 gatsby-plugin-offline@^2.0.20:
   version "2.0.20"
