@@ -2,6 +2,8 @@ require('dotenv').config({
   path: '.env',
 });
 
+const {ROLLBAR_ACCESS_TOKEN} = process.env;
+
 module.exports = {
   siteMetadata: {
     title: 'Wildsmith Studio site',
@@ -68,6 +70,18 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/src/pages/blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-rollbar',
+      options: {
+        accessToken: ROLLBAR_ACCESS_TOKEN,
+        // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
+        captureUncaught: true,
+        captureUnhandledRejections: true,
+        payload: {
+          environment: 'production',
+        },
       },
     },
     {
