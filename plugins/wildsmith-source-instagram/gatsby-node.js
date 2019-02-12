@@ -34,6 +34,7 @@ exports.sourceNodes = async (
         createNodeId,
         ext: '.jpg',
       });
+
       await createNodeField({
         node: fileNode,
         name: 'InstagramImage',
