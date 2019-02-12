@@ -13,6 +13,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "chalk": "^2.3.2",
     "disqus-react": "^1.0.5",
+    "eslint-loader": "^2.1.2",
     "gatsby": "^2.0.77",
     "gatsby-image": "^2.0.25",
     "gatsby-plugin-google-analytics": "next",
