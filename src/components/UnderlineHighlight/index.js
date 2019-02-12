@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {useUnderlineReady} from 'hooks';
 
 const StyledUnderline = styled.span`
   bottom: 10px;
@@ -16,50 +17,28 @@ const StyledUnderline = styled.span`
   }
 `;
 
-export default class UnderlineHighlight extends React.Component {
-  static propTypes = {
-    left: PropTypes.number,
-  };
-
-  static defaultProps = {
-    left: null,
-  };
-
-  state = {
-    ready: false,
-  };
-
-  mounted = true;
-
-  componentDidMount() {
-    setInterval(() => {
-      if (this.mounted) {
-        this.setState({ready: true});
-      }
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-
-  // PRIVATE
-
-  render() {
-    const {children, left} = this.props;
-    const {ready} = this.state;
-    return (
-      <span
-        className="UnderlineHightlight relative"
-        ref={el => (this.wrapper = el)}
-      >
-        {children}
-        <StyledUnderline
-          className="w-100 absolute b-0 bg-orange"
-          left={left}
-          ready={ready}
-        />
-      </span>
-    );
-  }
+function UnderlineHighlight({children, left}) {
+  const ready = useUnderlineReady();
+  return (
+    <span className="UnderlineHightlight relative">
+      {children}
+      <StyledUnderline
+        className="w-100 absolute b-0 bg-orange"
+        left={left}
+        ready={ready}
+      />
+    </span>
+  );
 }
+
+UnderlineHighlight.propTypes = {
+  children: PropTypes.any,
+  left: PropTypes.number,
+};
+
+UnderlineHighlight.defaultProps = {
+  children: null,
+  left: null,
+};
+
+export default UnderlineHighlight;
