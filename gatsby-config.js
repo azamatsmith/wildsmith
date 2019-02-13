@@ -89,5 +89,16 @@ module.exports = {
         trackingId: 'UA-115047842-1',
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Work Sans`,
+            variants: [`400`, `500`, `700`],
+          },
+        ],
+      },
+    },
   ],
 };

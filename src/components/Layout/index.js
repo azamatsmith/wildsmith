@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Footer, SEO, Manifest, Navbar} from 'components';
+import {Footer, SEO, Manifest} from 'components';
 import {ThemeProvider} from 'styled-components';
 import theme from 'styles/theme';
 import 'styles/main.scss';
@@ -20,13 +20,15 @@ class Layout extends Component {
   };
 
   render() {
-    const {children, location} = this.props;
+    const {children} = this.props;
     return (
       <ThemeProvider theme={theme}>
-        <div className="Layout flex flex-column" style={{minHeight: '100vh'}}>
+        <div
+          className="Layout sans-serif flex flex-column"
+          style={{minHeight: '100vh'}}
+        >
           <SEO />
           <Manifest />
-          <Navbar currentRoute={location.pathname} />
           <div className="flex flex-column flex-1">{children}</div>
           <Footer />
         </div>
