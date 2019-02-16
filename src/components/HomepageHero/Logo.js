@@ -1,13 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function Logo() {
+function Logo({className, ...rest}) {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width="249"
       height="31"
       viewBox="0 0 249 31"
+      {...rest}
     >
       <g fill="none" fillRule="evenodd">
         <path
@@ -23,8 +25,12 @@ function Logo() {
   );
 }
 
-Logo.propTypes = {};
+Logo.propTypes = {
+  className: PropTypes.string,
+};
 
-Logo.defaultProps = {};
+Logo.defaultProps = {
+  className: '',
+};
 
 export default Logo;

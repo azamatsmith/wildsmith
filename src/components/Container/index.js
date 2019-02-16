@@ -16,7 +16,7 @@ export default class Container extends React.Component {
 
   render() {
     const {children, className, type, ...rest} = this.props;
-    const thisClass = `Container mw7-ns center pa3 ph5-ns ${className}`;
+    const thisClass = `Container center pa3 ph5-ns ${className}`;
     const theseProps = {...rest, className: thisClass};
     return React.createElement(type, ...theseProps, ...children);
   }
