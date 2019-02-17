@@ -12,6 +12,7 @@ export {default as Icon} from './Icon';
 export {default as Input} from './Input';
 export {default as Instafeed} from './Instafeed';
 export {default as Layout} from './Layout';
+export {default as LogoBanner} from './LogoBanner';
 export {default as Link} from './Link';
 export {default as Manifest} from './Manifest';
 export {default as Navbar} from './Navbar';
