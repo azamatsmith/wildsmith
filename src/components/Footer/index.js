@@ -6,7 +6,7 @@ import routes from 'utils/routes';
 function Footer() {
   return (
     <footer>
-      <Container>
+      <Container className="flex">
         <div className="w-50">
           About
           <P>
