@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'wildsmith-source-instagram',
       options: {
         accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
-        limit: 6,
+        limit: 9,
       },
     },
     'gatsby-plugin-eslint',
