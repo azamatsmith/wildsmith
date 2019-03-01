@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Container extends React.Component {
+class Container extends React.Component {
   static propTypes = {
     children: PropTypes.any,
     className: PropTypes.string,
@@ -21,3 +21,5 @@ export default class Container extends React.Component {
     return React.createElement(type, ...theseProps, ...children);
   }
 }
+
+export default Container;
