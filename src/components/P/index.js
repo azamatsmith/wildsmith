@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import classNames from 'classnames';
 
-const StyledP = styled.p`
-  // font-family: WorkSans-Regular;
-`;
+const StyledP = styled.p``;
 
 function P({children, className, ...rest}) {
   return (

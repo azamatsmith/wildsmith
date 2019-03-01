@@ -13,8 +13,8 @@ function useInstafeed() {
               link
             }
             childImageSharp {
-              fixed(height: 405, width: 360) {
-                ...GatsbyImageSharpFixed
+              fluid(maxHeight: 375) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
