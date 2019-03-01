@@ -6,8 +6,8 @@
 // i.e.
 // $red: #000;
 
-$sans-serif: 'karla', -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-  helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
+$sans-serif: 'Work Sans', -apple-system, BlinkMacSystemFont, 'avenir next',
+  avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
   sans-serif !default;
 $system-font: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
   helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
@@ -78,16 +78,16 @@ $box-shadow-1: 0 1px 4px rgba(0, 0, 0, 0.1);
 // $box-shadow-3: 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ) !default;
 // $box-shadow-4: 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ) !default;
 // $box-shadow-5: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ) !default;
-// $black: #000 !default;
+$black: #393939 !default;
 $near-black: #424242 !default; // Modified
 $dark-gray: #4a4a4a !default; // Modified
 $mid-gray: #4b4f56 !default; // Modified, used in P
-// $gray: #777 !default;
+$gray: #b9b9b9 !default; // Footer
 // $silver: #999 !default;
 // $light-silver: #aaa !default;
 $moon-gray: #f7f6f5 !default; // Modified, used in Footer
 $light-gray: #d1d1d1 !default; // Modified, input border
-// $near-white: #f4f4f4 !default;
+$near-white: #f9f8f7 !default;
 // $white: #fff !default;
 // $transparent: transparent !default;
 // $black-90: rgba(0,0,0,.9) !default;
@@ -119,7 +119,7 @@ $light-gray: #d1d1d1 !default; // Modified, input border
 // $light-red: #ff725c !default;
 $orange: #e6bf9d !default; // Modified
 $gold: #f6b882 !default;
-// $yellow: #ffd700 !default;
+$yellow: #ffcb61 !default;
 $light-yellow: #fdf6e3 !default;
 // $purple: #5e2ca5 !default;
 // $light-purple: #a463f2 !default;

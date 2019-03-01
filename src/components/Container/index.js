@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-export default class Container extends React.Component {
+const StyledContainer = styled.div`
+  max-width: 1240px;
+`;
+
+class Container extends React.Component {
   static propTypes = {
     children: PropTypes.any,
     className: PropTypes.string,
@@ -16,8 +21,14 @@ export default class Container extends React.Component {
 
   render() {
     const {children, className, type, ...rest} = this.props;
-    const thisClass = `Container mw7-ns center pa3 ph5-ns ${className}`;
+    const thisClass = `Container center pa3 ph5-ns ${className}`;
     const theseProps = {...rest, className: thisClass};
-    return React.createElement(type, ...theseProps, ...children);
+    return (
+      <StyledContainer as={type} {...theseProps}>
+        {children}
+      </StyledContainer>
+    );
   }
 }
+
+export default Container;

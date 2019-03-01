@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'wildsmith-source-instagram',
       options: {
         accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
-        limit: 6,
+        limit: 9,
       },
     },
     'gatsby-plugin-eslint',
@@ -40,6 +40,14 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `noyf3juj0ajc`,
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -87,6 +95,17 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-115047842-1',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Work Sans`,
+            variants: [`400`, `500`, `700`],
+          },
+        ],
       },
     },
   ],
