@@ -1,11 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {Button, Container, Headline, LogoBanner} from 'components';
 import Logo from './Logo';
 import Human from 'components/Humans/Hero';
-
-// const StyledDiv = styled.div``;
 
 const StyledHeadline = styled(Headline)`
   max-width: 902px;

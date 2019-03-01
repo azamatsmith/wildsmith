@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const StyledInstafeedImage = styled.a`
   overflow: hidden;
+  max-height: 375px;
 
   // large
   @media screen and (min-width: 60em) {

@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import {Container, Link} from 'components';
 import routes from 'utils/routes';
 import styled from 'styled-components';
