@@ -2,34 +2,47 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import {Container, Link, P} from 'components';
 import routes from 'utils/routes';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer``;
+
+const Title = styled.h2``;
 
 function Footer() {
   return (
-    <footer>
+    <StyledFooter className="bg-black pv5">
       <Container className="flex">
         <div className="w-50">
-          About
-          <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+          <Title className="f2 fw4 white">About us</Title>
+          <P className="gray">
+            Wildsmith is the studio of the design and development duo,{' '}
+            <Link to="https://twitter.com/azamatsmith">Matthew Smith</Link> and{' '}
+            <Link to="https://twitter.com/rachelcope">Rachel Cope Smith</Link>{' '}
+            and based in Denver, Colorado. We design and build digital products,
+            services, and experiences that matter.
+          </P>
+          <P className="gray">
+            Rachel has over 8 years of experience in UI, UX, product design, and
+            strategy. She co-founded a web app and has worked as a design
+            consultant with dozens of clients across the US, Europe, and Mexico.
+          </P>
+          <P className="gray">
+            Matt is a full-stack developer. He has developed software for the US
+            Air Force, Department of Veterans Affairs, numerous startups, as
+            well as launched several of his own apps and projects.
           </P>
         </div>
         <div className="w-50">
           <ul className="pl0 list">
-            <li>
+            <li className="lh-copy">
               <Link to={routes('blog')}>Blog</Link>
             </li>
-            <li>
+            <li className="lh-copy">
               <Link to="https://www.instagram.com/wildsmith.studio/">
                 Instagram
               </Link>
             </li>
-            <li>
+            <li className="lh-copy">
               <Link to="https://www.linkedin.com/company/wildsmith-studio-llc">
                 LinkedIn
               </Link>
@@ -38,7 +51,7 @@ function Footer() {
           </ul>
         </div>
       </Container>
-    </footer>
+    </StyledFooter>
   );
 }
 
