@@ -1,10 +1,17 @@
 import React from 'react';
-import {ContactForm, HomepageHero, Instafeed, Layout} from 'components';
+import {
+  ContactForm,
+  HomepageHero,
+  Instafeed,
+  Layout,
+  WhatWeDo,
+} from 'components';
 
 export default ({location}) => (
   <Layout location={location}>
     <HomepageHero />
-    <ContactForm />
+    <WhatWeDo />
     <Instafeed />
+    <ContactForm />
   </Layout>
 );
