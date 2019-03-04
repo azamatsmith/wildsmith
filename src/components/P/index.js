@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import classNames from 'classnames';
 
-const StyledP = styled.p``;
+const StyledP = styled.p`
+  line-height: 33px;
+`;
 
 function P({children, className, ...rest}) {
   return (
     <StyledP
-      className={classNames(
-        'f5 f4-ns sans-serif near-black lh-copy',
-        className
-      )}
+      className={classNames('f5 f4-ns sans-serif near-black', className)}
       {...rest}
     >
       {children}

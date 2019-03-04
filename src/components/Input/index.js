@@ -14,7 +14,7 @@ const InputWrapper = styled.div`
 `;
 
 function Input({label, textarea, ...rest}) {
-  const baseClass = 'ba br2 b--black pa3 mid-gray outline-0 bw1';
+  const baseClass = 'ba br2 b--black pa3 mid-gray outline-0 bw1 bg-transparent';
   return (
     <InputWrapper className="Input flex flex-column mt3">
       {label && (

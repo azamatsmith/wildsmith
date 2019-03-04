@@ -8,12 +8,14 @@ const StyledHeadline = styled(Headline)`
   max-width: 902px;
 `;
 
-const StyledHomepageHero = styled.div``;
+const StyledHomepageHero = styled.div`
+  min-height: 625px;
+`;
 
 const HumanWrapper = styled.div`
-  position: absolute;
   bottom: 135px;
   left: -85px;
+  position: absolute;
 `;
 
 function HomepageHero() {

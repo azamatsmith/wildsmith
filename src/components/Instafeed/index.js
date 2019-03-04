@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Container} from 'components';
+import {Button, Container} from 'components';
 import InstafeedImage from './InstafeedImage';
 import useInstafeed from './useInstafeed';
+import routes from 'utils/routes';
 
 const ImageGrid = styled.div`
   display: grid;
@@ -28,6 +29,11 @@ function Instafeed() {
     <div className="flex pv6">
       <Container className="w-100">
         <ImageGrid>{images}</ImageGrid>
+        <div className="flex justify-center mt6 pt4">
+          <Button className="dib" to={routes('instagram')}>
+            Follow us
+          </Button>
+        </div>
       </Container>
     </div>
   );
