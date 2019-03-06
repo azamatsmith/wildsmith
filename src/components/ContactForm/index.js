@@ -5,8 +5,6 @@ import {Button, Container, Headline, Input, Link} from 'components';
 import FormSuccess from './FormSuccess';
 import useFormReducer from './useFormReducer';
 
-const Form = styled.form``;
-
 const SubTitle = styled.p`
   line-height: 33px;
 `;
@@ -67,7 +65,7 @@ function ContactForm() {
             </Link>{' '}
             or send us a message.
           </SubTitle>
-          <Form onSubmit={handleSubmit}>
+          <form className="flex flex-column" onSubmit={handleSubmit}>
             <Input
               label="Your name"
               onChange={e => updateField(e, 'name')}
@@ -89,10 +87,12 @@ function ContactForm() {
               textarea
               value={message}
             />
-            <Button className="mt4 fr" loading={loading} type="submit">
-              Submit
-            </Button>
-          </Form>
+            <div>
+              <Button className="mt4 fr" loading={loading} type="submit">
+                Submit
+              </Button>
+            </div>
+          </form>
         </Wrapper>
       </Container>
       <FormSuccess show={success} />
