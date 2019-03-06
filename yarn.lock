@@ -920,6 +920,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.3.1":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
+  integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@^7.1.0", "@babel/template@^7.1.2", "@babel/template@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.2.2.tgz#005b3fdf0ed96e88041330379e0da9a708eb2907"
@@ -7745,10 +7752,10 @@ gatsby-plugin-eslint@^2.0.1:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.1.tgz#88641be50b95a867416878c43b64458a2d6b9c21"
   integrity sha512-n6T0Rp52+egiAmLx8T43rMud3y0CoGM2eSAqWqM9/hhuZZ8StYqRr2BHLLThhNj/1I2YbJbtSBRXySWUPQ1HhA==
 
-gatsby-plugin-google-analytics@next:
-  version "2.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.0-rc.2.tgz#6ec18010a581c6f4258779a9ee6ea96626e60f31"
-  integrity sha512-0aSNOcJzsrWQzNc8Xfm98GcTBYCAZmNc4bXsBbq3SHh8I24r8OLr4RylVsAZbW846NCgLg+Q066PGAbM/ishsw==
+gatsby-plugin-google-analytics@^2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.16.tgz#92e2f4c145cae75fe6d828d3fced89ccd70a1813"
+  integrity sha512-xJNcDZzBjtsHBm+uEMv8dJEvOg5XXnVJQmHgEn4NoYp+nByIGWPL13o579lIiaoOcgSRZX0Yek3qpaUFDyWpzQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
@@ -14314,6 +14321,13 @@ react-split-pane@^0.1.84:
     react-dom "^16.6.3"
     react-lifecycles-compat "^3.0.4"
     react-style-proptype "^3.0.0"
+
+react-spring@^8.0.11:
+  version "8.0.11"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.11.tgz#73b11e04bb61b3c297d2a92364fb32d6c9c34c32"
+  integrity sha512-CCW4Nj6pWJyZrBp/PWF1PopI9x0lj+6imx4sWzzPLXYoLuhUQbbYQgcNRh6KvshwiGJJABlVREUIB/Tm8/36/g==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
 
 react-style-proptype@^3.0.0:
   version "3.2.2"

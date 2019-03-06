@@ -4,12 +4,20 @@ import styled from 'styled-components';
 // import {useVisible} from 'hooks';
 
 const Title = styled.h2`
-  font-size: 54px;
   letter-spacing: 0;
   text-align: center;
-  line-height: 79px;
   max-width: 1017px;
   font-weight: 500;
+  // ns
+  @media screen and (min-width: 30em) {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  // large
+  @media screen and (min-width: 960px) {
+    font-size: 54px;
+    line-height: 79px;
+  }
 `;
 
 function WhatWeDo() {

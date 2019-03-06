@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Container, Headline, Input, Link} from 'components';
 import styled from 'styled-components';
 import axios from 'axios';
+import {Button, Container, Headline, Input, Link} from 'components';
+import FormSuccess from './FormSuccess';
 import useFormReducer from './useFormReducer';
 
 const Form = styled.form``;
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
 
 function ContactForm() {
   const [formState, dispatch] = useFormReducer();
-  const {name, email, message, loading} = formState;
+  const {name, email, loading, message, success} = formState;
 
   function updateField(e, field) {
     dispatch({type: 'UPDATE_FIELD', field, value: e.target.value});
@@ -48,8 +49,11 @@ function ContactForm() {
   }
 
   return (
-    <section className="ContactForm pv6 bg-near-white" id="work-with-us">
-      <Container>
+    <section
+      className="ContactForm  bg-near-white relative overflow-y-hidden"
+      id="work-with-us"
+    >
+      <Container className="pv6">
         <Wrapper>
           <Headline className="tc mt0 mb3" as="h2">
             Work with us
@@ -91,6 +95,7 @@ function ContactForm() {
           </Form>
         </Wrapper>
       </Container>
+      <FormSuccess show={success} />
     </section>
   );
 }
