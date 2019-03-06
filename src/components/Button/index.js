@@ -55,15 +55,17 @@ class Button extends React.Component {
     const cn = classnames('flex items-center justify-center', className);
 
     const isInternal = url => {
-      if (url[0] === '#') {
-        return true;
-      }
       return /^\/(?!\/)/.test(url);
+    };
+
+    const isLocal = url => {
+      return url[0] === '#';
     };
 
     let linkProps = {};
 
     if (to && isInternal(to)) linkProps = {to, as: GatsbyLink};
+    if (to && isLocal(to)) linkProps = {href: to, as: 'a'};
     else if (to)
       linkProps = {
         as: 'a',
