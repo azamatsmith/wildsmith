@@ -13,9 +13,19 @@ const StyledHomepageHero = styled.div`
 `;
 
 const HumanWrapper = styled.div`
+  display: none;
   bottom: 135px;
-  left: -85px;
   position: absolute;
+  @media screen and (min-width: 525px) {
+    display: block;
+  }
+  @media screen and (min-width: 525px) and (max-width: 1030px) {
+    left: -140px;
+  }
+  // large
+  @media screen and (min-width: 1030px) {
+    left: -85px;
+  }
 `;
 
 function HomepageHero() {

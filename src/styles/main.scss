@@ -35,7 +35,7 @@
 
 // Link style
 .ws-link {
-  color: $orange;
+  color: $yellow;
   position: relative;
   text-decoration: none;
 }
@@ -50,7 +50,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: $orange;
+  background-color: $yellow;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -70,11 +70,11 @@
 }
 
 ::selection {
-  background: $dark-pink; /* WebKit/Blink Browsers */
-  color: $near-white;
+  background: $yellow; /* WebKit/Blink Browsers */
+  color: $white;
 }
 
 ::-moz-selection {
-  background: $dark-pink; /* Gecko Browsers */
-  color: $near-white;
+  background: $yellow; /* Gecko Browsers */
+  color: $white;
 }

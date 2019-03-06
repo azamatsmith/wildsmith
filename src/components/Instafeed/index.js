@@ -26,7 +26,7 @@ function Instafeed() {
     .filter(image => image.childImageSharp)
     .map(image => <InstafeedImage key={image.fields.link} image={image} />);
   return (
-    <div className="flex pv6">
+    <section className="flex pv6">
       <Container className="w-100">
         <ImageGrid>{images}</ImageGrid>
         <div className="flex justify-center mt6 pt4">
@@ -35,7 +35,7 @@ function Instafeed() {
           </Button>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }
 

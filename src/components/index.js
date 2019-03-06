@@ -21,6 +21,4 @@ export {default as P} from './P';
 export {default as SEO} from './SEO';
 export {default as Tag} from './Tag';
 export {default as TitleText} from './TitleText';
-export {default as UnderlineText} from './UnderlineText';
-export {default as UnderlineHighlight} from './UnderlineHighlight';
 export {default as WhatWeDo} from './WhatWeDo';
