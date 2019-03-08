@@ -57,14 +57,13 @@
     "format": "prettier --trailing-comma=es5 --single-quote --write \"src/**/*.js\" \"/scripts/**/*.s\"",
     "serve": "gatsby serve",
     "storybook": "NODE_PATH=./src start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "NODE_PATH=./src build-storybook -c .storybook -o storybook-dist && node ./scripts/publishStorybook.js",
     "test": "jest"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.0.0",
     "@storybook/addon-options": "^5.0.0",
     "@storybook/react": "^5.0.0",
-    "@storybook/storybook-deployer": "^2.3.0",
     "babel-eslint": "^10.0.1",
     "core-js": "^2.6.5",
     "eslint": "^5.15.1",
@@ -75,6 +74,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.5.0",
     "gatsby-plugin-eslint": "^2.0.4",
+    "gh-pages": "^2.0.1",
     "lerna": "^3.4.0",
     "node-fetch": "^2.0.0",
     "prettier": "^1.16.4",
