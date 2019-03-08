@@ -20,6 +20,16 @@ const Title = styled.h2`
   }
 `;
 
+// background-position-x: -100px;
+const Span = styled.span`
+  background: ${({theme}) => theme.yellow};
+  background-size: 10px 10px;
+  background-clip: text;
+  // background-position: 0px 0px;
+  -webkit-background-clip: text;
+  color: transparent;
+`;
+
 function WhatWeDo() {
   // const el = React.useRef(null);
   // const {scrolledIntoView} = useVisible(el);
@@ -28,8 +38,9 @@ function WhatWeDo() {
       <Container>
         <Title>
           We design and build digital products and services that solve problems
-          through <span className="yellow">human-centered design</span> and{' '}
-          <span className="yellow">test-driven, agile development</span>.
+          through{' '}
+          <Span data-text="human-centered design">human-centered design</Span>{' '}
+          and <Span>test-driven, agile development</Span>.
         </Title>
       </Container>
     </section>
