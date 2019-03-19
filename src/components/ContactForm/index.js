@@ -91,6 +91,11 @@ function ContactForm() {
               <Button className="mt4 fr" loading={loading} type="submit">
                 Submit
               </Button>
+              <button
+                onClick={() => updateField({target: {value: true}}, 'success')}
+              >
+                show success
+              </button>
             </div>
           </form>
         </Wrapper>
